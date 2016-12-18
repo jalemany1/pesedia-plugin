@@ -27,6 +27,13 @@ elgg_extend_view('css/elgg', 'pesedia/css', 1000);
  Pendiente encontrar un método menos intrusivo.
 */
 
+/* Modificada la linea 69 de notifier/start.php:
+ * 
+ * 		$text = elgg_view_icon('file-text-o'); //AGUS
+ * para cambiar el icono de las notificaciones. Pendiente
+ * hacer el cambio aquí sin tocar el original.
+ */
+
 // Exigir el código de registro 
 elgg_register_plugin_hook_handler('action', 'register', 'registrationcode_register_hook');
 

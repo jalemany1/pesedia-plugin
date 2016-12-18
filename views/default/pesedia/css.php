@@ -131,3 +131,12 @@ select {
 .gm-badge {
 	border: none;
 }
+
+/* Cambiar el color del icono de denuncia */
+
+.elgg-icon-report-this {
+    color : Red;
+}
+.elgg-icon-report-this:hover {
+    color : Black;
+}
