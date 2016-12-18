@@ -27,17 +27,17 @@ elgg_extend_view('css/elgg', 'pesedia/css', 1000);
  Pendiente encontrar un método menos intrusivo.
 */
 
-/* Modificada la linea 69 de notifier/start.php:
- * 
- * 		$text = elgg_view_icon('file-text-o'); //AGUS
- * para cambiar el icono de las notificaciones. Pendiente
- * hacer el cambio aquí sin tocar el original.
- */
 
 // Exigir el código de registro 
 elgg_register_plugin_hook_handler('action', 'register', 'registrationcode_register_hook');
 
+/* Cambia el icono de las notificaciones. */
+
+elgg_unregister_plugin_hook_handler('register', 'menu:topbar', 'notifier_topbar_menu_setup');
+elgg_register_plugin_hook_handler('register', 'menu:topbar', 'notifier_topbar_menu_setup_pesedia');
+
 }
+
 
 
 function myplugin_alter_groups_profile_widgets($hook, $type, $returnvalue, $params) {
@@ -82,4 +82,40 @@ function registrationcode_register_hook() {
 	set_input('custom_profile_fields_registrationcode','');
 }
 
+/* Reemplaza a notifier_topbar_menu_setup de mod/notifier/start.php */
+function notifier_topbar_menu_setup_pesedia ($hook, $type, $return, $params) {
+	if (elgg_is_logged_in()) {
+		// Get amount of unread notifications
+		$count = (int)notifier_count_unread();
+
+		$text = elgg_view_icon('file-text-o'); // Este es el cambio 
+		$tooltip = elgg_echo("notifier:unreadcount", array($count));
+
+		if ($count > 0) {
+			if ($count > 99) {
+				// Don't allow the counter to grow endlessly
+				$count = '99+';
+			}
+			$hidden = '';
+		} else {
+			$hidden = 'class="hidden"';
+		}
+
+		$text .= "<span id=\"notifier-new\" $hidden>$count</span>";
+
+		$item = ElggMenuItem::factory(array(
+				'name' => 'notifier',
+				'href' => '#notifier-popup',
+				'text' => $text,
+				'priority' => 600,
+				'title' => $tooltip,
+				'rel' => 'popup',
+				'id' => 'notifier-popup-link'
+		));
+
+		$return[] = $item;
+	}
+
+	return $return;
+}
 
