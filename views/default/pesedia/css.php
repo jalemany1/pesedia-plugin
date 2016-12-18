@@ -12,11 +12,11 @@ p, body {
 	font-size: 13px;
 }
 
-/* Ocultamos la franja donde se muestra el nombre de la red social
+/* Ocultamos la franja donde se muestra el nombre de la red social */
 .elgg-page-header {
     display: none; 
 }
-*/
+
 /* Hacemos más ancha la topbar y ponemos imagen de fondo */
 .elgg-page-topbar {
     background: url('/mod/pesedia/img/header-bg.jpg');

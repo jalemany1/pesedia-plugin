@@ -765,11 +765,11 @@ Ver y responder en el debate:
 	'mechanics:join:group:user' => 'Unirte a un grupo',
 	'mechanics:join:group:user:desc' => 'Cada vez que te unas a un grupo recibirás %d puntos hasta un máximo de %d puntos.',
 	
-	'mechanics:create:relationship:friend' => 'Añadir amigo',
-	'mechanics:create:relationship:friend:desc' => 'Cada vez que te hagas amigo de alguien recibirás %d puntos hasta un máximo de %d puntos.',
+	'mechanics:create:relationship:friend' => 'Han aceptado tu solicitud de amistad',
+	'mechanics:create:relationship:friend:desc' => 'Cada vez que acepten tu solicitud de amistad recibirás %d puntos hasta un máximo de %d puntos.',
 	
-	'mechanics:create:relationship:friend:reverse' => 'Ser amigo',
-	'mechanics:create:relationship:friend:reverse:desc' => 'Cada que alguien se haga tu amigo recibirás %d puntos hasta un máximo de %d puntos.',
+	'mechanics:create:relationship:friend:reverse' => 'Aceptar una solicitud de amistad',
+	'mechanics:create:relationship:friend:reverse:desc' => 'Cada que vez que aceptes una solicitud de amistad recibirás %d puntos hasta un máximo de %d puntos.',
 		
 	// hypeApps
 
