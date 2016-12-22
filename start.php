@@ -32,6 +32,12 @@ function pesedia_init() {
 	/* Cambia el icono de las notificaciones. */
 	elgg_unregister_plugin_hook_handler('register', 'menu:topbar', 'notifier_topbar_menu_setup');
 	elgg_register_plugin_hook_handler('register', 'menu:topbar', 'notifier_topbar_menu_setup_pesedia');
+
+	// Remove ReportContent icon from right-space (extras) options
+	elgg_unregister_menu_item('extras', 'report_this');
+	// Add ReportContent option for each ElggEntity
+	elgg_register_plugin_hook_handler('register', 'menu:river', 'add_reportcontent_option');
+	elgg_register_plugin_hook_handler('register', 'menu:entity', 'add_reportcontent_option');
 }
 
 
@@ -108,6 +114,44 @@ function notifier_topbar_menu_setup_pesedia ($hook, $type, $return, $params) {
 
 		$return[] = $item;
 	}
+
+	return $return;
+}
+
+/**
+ * Add ReportContent option for each Elgg RiverItem or Entity
+ *
+ * @param string 	$hook 		'register'
+ * @param string 	$type 		['menu:river'|'menu:entity']
+ * @param array 	$return 	Menu items
+ * @param array 	$params 	Hook params
+ * @return ElggMenuItem[]
+ */
+function add_reportcontent_option($hook, $type, $return, $params) {
+
+	/* @var ElggEntity $entity */
+	$entity = $params['item'] ? $params['item']->getObjectEntity() :
+			 ($params['entity'] ? $params['entity'] : null);
+
+	// Check requirements
+    if (!elgg_is_logged_in() || !$entity || !elgg_instanceof($entity)) {
+        return $return;
+    }
+
+    $title = empty($entity->title) ? get_class($entity) : $entity->title;
+    $href = elgg_http_add_url_query_elements('reportedcontent/add', [
+		'address' => $entity->getURL(),
+		'title' => $title,
+	]);
+	
+	$return[] = \ElggMenuItem::factory([
+		'name' => 'report',
+		'text' => elgg_echo('reportedcontent:report'),
+		'href' => $href,
+		'section' => 'action',
+		'link_class' => 'elgg-lightbox',
+		'deps' => 'elgg/reportedcontent',
+	]);
 
 	return $return;
 }
