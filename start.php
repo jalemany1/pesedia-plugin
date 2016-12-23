@@ -33,11 +33,16 @@ function pesedia_init() {
 	elgg_unregister_plugin_hook_handler('register', 'menu:topbar', 'notifier_topbar_menu_setup');
 	elgg_register_plugin_hook_handler('register', 'menu:topbar', 'notifier_topbar_menu_setup_pesedia');
 
+	/* Improve content reporting */
 	// Remove ReportContent icon from right-space (extras) options
 	elgg_unregister_menu_item('extras', 'report_this');
 	// Add ReportContent option for each ElggEntity
 	elgg_register_plugin_hook_handler('register', 'menu:river', 'add_reportcontent_option');
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'add_reportcontent_option');
+
+	/* Repair hashtags for your later social network search */
+	// Delete the # symbol
+	elgg_register_plugin_hook_handler('extract:qualifiers', 'all', 'standardize_hashtag_format');
 }
 
 
@@ -118,6 +123,7 @@ function notifier_topbar_menu_setup_pesedia ($hook, $type, $return, $params) {
 	return $return;
 }
 
+
 /**
  * Add ReportContent option for each Elgg RiverItem or Entity
  *
@@ -153,5 +159,22 @@ function add_reportcontent_option($hook, $type, $return, $params) {
 		'deps' => 'elgg/reportedcontent',
 	]);
 
+	return $return;
+}
+
+
+/**
+ * Unify hashtags format to Elgg format
+ *
+ * @param string 	$hook 		'extract:qualifiers'
+ * @param string 	$type 		'all'
+ * @param array 	$return 	Scraped content + hashtags formatted
+ * @param array 	$params 	Hook params
+ * @return ElggMenuItem[]
+ */
+function standardize_hashtag_format($hook, $type, $return, $params) {
+	foreach ($return['hashtags'] as &$htag) {
+		$htag = substr($htag, 1);
+	}
 	return $return;
 }
