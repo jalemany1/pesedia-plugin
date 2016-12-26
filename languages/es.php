@@ -756,8 +756,17 @@ Ver y responder en el debate:
 	'mechanics:login:user:default' => 'Iniciar sesión',
 	'mechanics:login:user:default:desc' => 'Cada vez que inicies sesión recibirás %d puntos hasta un máximo de %d puntos.',
 
-	'mechanics:profileupdate:user:default' => 'Actualizar tu perfil',
-	'mechanics:profileupdate:user:default:desc' => 'Cada vez que actualices tu perfil recibirás %d puntos hasta un máximo de %d puntos.',
+	'mechanics:profileupdate:user:everybody' => 'Actualizar algún campo de perfil con acceso Toda la red',
+	'mechanics:profileupdate:user:everybody:desc' => 'Cada vez que actualices tu perfil, y el acceso a alguno de los campos sea Toda la red, te recibirás %d puntos hasta un máximo de %d puntos.',
+		
+	'mechanics:profileupdate:user:private' => 'Actualizar algún campo de perfil con acceso Privado',
+	'mechanics:profileupdate:user:private:desc' => 'Cada vez que actualices tu perfil, y el acceso a alguno de los campos sea Privado, te recibirás %d puntos hasta un máximo de %d puntos.',
+	
+	'mechanics:profileupdate:user:friends' => 'Actualizar algún campo de perfil con acceso Amigos',
+	'mechanics:profileupdate:user:friends:desc' => 'Cada vez que actualices tu perfil, y el acceso a alguno de los campos sea Amigos, te recibirás %d puntos hasta un máximo de %d puntos.',
+	
+	'mechanics:profileupdate:user:collection' => 'Actualizar algún campo de perfil con acceso a una colección de amigos',
+	'mechanics:profileupdate:user:collection:desc' => 'Cada vez que actualices tu perfil, y el acceso a alguno de los campos sea una colección de amigos, te recibirás %d puntos hasta un máximo de %d puntos.',
 	
 	'mechanics:profileiconupdate:user:default' => 'Subir avatar',
 	'mechanics:profileiconupdate:user:default:desc' => 'Cada vez que actualices tu avatar recibirás %d puntos hasta un máximo de %d puntos.',
