@@ -704,13 +704,25 @@ Ver y responder en el debate:
 	'mechanics:rule:progress' => 'Hasta el momento has conseguido %d puntos. Todavía puedes conseguir <label> %d </label>más.',
 	'mechanics:rule:maxpointsdone'  => 'Ya has conseguido el máximo de puntos posible.',
 		
-   	'mechanics:publish:object:hjwall:private' => 'Añadir entrada en muro - Visibilidad privada',
-	'mechanics:publish:object:hjwall:private:desc' => 'Cada vez que publiques algo en tu muro y en el selector de audiencia escojas "Privado" conseguirás %d puntos hasta un máximo de %d puntos.',
-	'mechanics:publish:object:hjwall:everybody' => 'Añadir entrada en muro - Visibilidad  todos',
-	'mechanics:publish:object:hjwall:everybody:desc' => 'Cada vez que publiques algo en tu muro y en el selector de audiencia escojas "Toda la red" conseguirás %d puntos hasta un máximo de %d puntos.',
-	'mechanics:publish:object:hjwall:friends' => 'Añadir entrada en muro - Visibilidad amigos',
-	'mechanics:publish:object:hjwall:friends:desc' => 'Cada vez que publiques algo en tu muro y en el selector de audiencia escojas "Amigos" conseguirás %d puntos hasta un máximo de %d puntos.',
-	'mechanics:publish:object:hjwall:collection' => 'Añadir entrada en muro - Visibilidad colección de amigos',
+	'mechanics:publish:object:hjwall:mywall' => 'Publicar una entrada en tu muro',
+	'mechanics:publish:object:hjwall:mywall:desc' => 'Cada vez que publiques algo en tu muro conseguirás %d puntos hasta un máximo de %d puntos.',
+
+	'mechanics:publish:object:hjwall:otherwall' => 'Publicar una entrada en un muro distinto al tuyo',
+	'mechanics:publish:object:hjwall:otherwall:desc' => 'Cada vez que publiques algo en un muro distinto al muro conseguirás %d puntos hasta un máximo de %d puntos.',
+
+	'mechanics:publish:object:hjwall:group' => 'Publicar una entrada en el muro de un grupo de tu propiedad',
+	'mechanics:publish:object:hjwall:group:desc' => 'Cada vez que publiques algo en el muro de un grupo de tu propiedad conseguirás %d puntos hasta un máximo de %d puntos.',
+
+	'mechanics:publish:object:hjwall:group:notgroupowner' => 'Publicar una entrada en el muro de un grupo que no es de tu propiedad',
+	'mechanics:publish:object:hjwall:group:desc' => 'Cada vez que publiques algo en el muro de un grupo que no sea de tu propiedad conseguirás %d puntos hasta un máximo de %d puntos.',
+		
+	'mechanics:publish:object:hjwall:private' => 'Publicar una entrada con visibilidad "Privado"',
+	'mechanics:publish:object:hjwall:private:desc' => 'Cada vez que publiques una entrada y en el selector de audiencia escojas "Privado" conseguirás %d puntos hasta un máximo de %d puntos.',
+	'mechanics:publish:object:hjwall:everybody' => 'Publicar una entrada con visibilidad "Toda la red"',
+	'mechanics:publish:object:hjwall:everybody:desc' => 'Cada vez que publiques una entrada y en el selector de audiencia escojas "Toda la red" conseguirás %d puntos hasta un máximo de %d puntos.',
+	'mechanics:publish:object:hjwall:friends' => 'Publicar una entrada con visibilidad "Amigos"',
+	'mechanics:publish:object:hjwall:friends:desc' => 'Cada vez que publiques una entrada y en el selector de audiencia escojas "Amigos" conseguirás %d puntos hasta un máximo de %d puntos.',
+	'mechanics:publish:object:hjwall:collection' => 'Publicar una entrada con visibilidad para una colección de amigos"',
 	'mechanics:publish:object:hjwall:collection:desc' => 'Cada vez que publiques algo en tu muro y en el selector de audiencia escojas una de tus colecciones de amigos conseguirás %d puntos hasta un máximo de %d puntos.',
 		
 	'mechanics:join:group:user:reverse' => 'Alguien se une a alguno de mis grupos ',
@@ -731,14 +743,14 @@ Ver y responder en el debate:
 	'mechanics:create:object:groupforumtopic' => 'Añadir un tema de discusión en un grupo',
 	'mechanics:create:object:groupforumtopic:desc' => 'Cada vez crees un tema de discusión en un grupo conseguirás %d puntos hasta un máximo de %d puntos.',
 
-	'mechanics:create:group:default' => 'Crear grupo',
+	'mechanics:create:group:default' => 'Crear un grupo',
 	'mechanics:create:group:default:desc' => 'Cada vez que crees un grupo conseguirás %d puntos hasta un máximo de %d puntos.',
 		
-	'mechanics:create:annotation:comment' => 'Añadir comentario',
+	'mechanics:create:annotation:comment' => 'Añadir un comentario',
 	'mechanics:create:annotation:comment:desc' => 'Cada vez que comentes algo conseguirás %d puntos hasta un máximo de %d puntos.',
 		
 	'mechanics:create:annotation:comment:reverse' => 'Recibir un comentario',
-	'mechanics:create:annotation:comment:reverse:desc' => 'Cada vez alguien comentes algo que hayas publicado conseguirás %d puntos hasta un máximo de %d puntos.',
+	'mechanics:create:annotation:comment:reverse:desc' => 'Cada vez alguien comente algo que hayas publicado conseguirás %d puntos hasta un máximo de %d puntos.',
 
 	'mechanics:create:annotation:group_topic_post' => 'Responder a un tema de discusión',
 	'mechanics:create:annotation:group_topic_post:desc' => 'Cada vez que respondas a un tema de discusión de un grupo conseguirás %d puntos hasta un máximo de %d puntos.',
