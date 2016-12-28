@@ -714,7 +714,7 @@ Ver y responder en el debate:
 	'mechanics:publish:object:hjwall:group:desc' => 'Cada vez que publiques algo en el muro de un grupo de tu propiedad conseguirás %d puntos hasta un máximo de %d puntos.',
 
 	'mechanics:publish:object:hjwall:group:notgroupowner' => 'Publicar una entrada en el muro de un grupo que no es de tu propiedad',
-	'mechanics:publish:object:hjwall:group:desc' => 'Cada vez que publiques algo en el muro de un grupo que no sea de tu propiedad conseguirás %d puntos hasta un máximo de %d puntos.',
+	'mechanics:publish:object:hjwall:group:notgroupowner:desc' => 'Cada vez que publiques algo en el muro de un grupo que no sea de tu propiedad conseguirás %d puntos hasta un máximo de %d puntos.',
 		
 	'mechanics:publish:object:hjwall:private' => 'Publicar una entrada con visibilidad "Privado"',
 	'mechanics:publish:object:hjwall:private:desc' => 'Cada vez que publiques una entrada y en el selector de audiencia escojas "Privado" conseguirás %d puntos hasta un máximo de %d puntos.',
@@ -722,7 +722,7 @@ Ver y responder en el debate:
 	'mechanics:publish:object:hjwall:everybody:desc' => 'Cada vez que publiques una entrada y en el selector de audiencia escojas "Toda la red" conseguirás %d puntos hasta un máximo de %d puntos.',
 	'mechanics:publish:object:hjwall:friends' => 'Publicar una entrada con visibilidad "Amigos"',
 	'mechanics:publish:object:hjwall:friends:desc' => 'Cada vez que publiques una entrada y en el selector de audiencia escojas "Amigos" conseguirás %d puntos hasta un máximo de %d puntos.',
-	'mechanics:publish:object:hjwall:collection' => 'Publicar una entrada con visibilidad para una colección de amigos"',
+	'mechanics:publish:object:hjwall:collection' => 'Publicar una entrada con visibilidad para una colección de amigos',
 	'mechanics:publish:object:hjwall:collection:desc' => 'Cada vez que publiques algo en tu muro y en el selector de audiencia escojas una de tus colecciones de amigos conseguirás %d puntos hasta un máximo de %d puntos.',
 		
 	'mechanics:join:group:user:reverse' => 'Alguien se une a alguno de mis grupos ',
@@ -735,6 +735,21 @@ Ver y responder en el debate:
 	'mechanics:create:object:group:photo:notgroupowner:desc' => 'Cada vez que subas una foto a algún álbum de un grupo que no sea de tu propiedad conseguirás %d puntos hasta un máximo de %d puntos.',
 	'mechanics:create:object:group:photo:reverse' => 'Alguien añade una foto en alguno de mis grupos',
 	'mechanics:create:object:group:photo:reverse:desc' => 'Cada vez que alguien suba una foto a un álbum de alguno de tus grupos conseguirás %d puntos hasta un máximo de %d puntos.',
+
+	'mechanics:create:object:album:private' => 'Hacer que la visibilidad de un álbum sea "Privado"',
+	'mechanics:create:object:album:private:desc' => 'Cada vez que hagas que la visibilidad de un álbum sea "Privado" conseguirás %d puntos hasta un máximo de %d puntos.',
+		
+	'mechanics:create:object:album:friends' => 'Hacer que la visibilidad de un álbum sea "Amigos"',
+	'mechanics:create:object:album:friends:desc' => 'Cada vez que hagas que la visibilidad de un álbum sea "Amigos" conseguirás %d puntos hasta un máximo de %d puntos.',
+		
+	'mechanics:create:object:album:everybody' => 'Hacer que la visibilidad de un álbum sea "Toda la red"',
+	'mechanics:create:object:album:everybody:desc' => 'Cada vez que hagas que la visibilidad de un álbum sea "Toda la red" conseguirás %d puntos hasta un máximo de %d puntos.',
+		
+	'mechanics:create:object:album:collection' => 'Hacer que la visibilidad de un álbum sea una colección de amigos o un grupo',
+	'mechanics:create:object:album:collection:desc' => 'Cada vez que hagas que la visibilidad de un álbum sea una colección de amigos o un grupo conseguirás %d puntos hasta un máximo de %d puntos.',
+		
+		
+		
 	'mechanics:create:annotation:comment:group' => 'Añadir un comentario en el muro de un grupo',
 	'mechanics:create:annotation:comment:group:desc' => 'Cada vez que comentes algo en el muro de un grupo conseguirás %d puntos hasta un máximo de %d puntos.',
 	'mechanics:create:annotation:comment:group:reverse' => 'Alguien añade un comentario en alguno de mis grupos',
