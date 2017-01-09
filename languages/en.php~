@@ -1,4 +1,0 @@
-<?php
-return array(
-	'registrationcode:invitationcode' => "Resistration code invalid",
-);

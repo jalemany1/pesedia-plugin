@@ -704,13 +704,25 @@ Ver y responder en el debate:
 	'mechanics:rule:progress' => 'Hasta el momento has conseguido %d puntos. Todavía puedes conseguir <label> %d </label>más.',
 	'mechanics:rule:maxpointsdone'  => 'Ya has conseguido el máximo de puntos posible.',
 		
-   	'mechanics:publish:object:hjwall:private' => 'Añadir entrada en muro - Visibilidad privada',
-	'mechanics:publish:object:hjwall:private:desc' => 'Cada vez que publiques algo en tu muro y en el selector de audiencia escojas "Privado" conseguirás %d puntos hasta un máximo de %d puntos.',
-	'mechanics:publish:object:hjwall:everybody' => 'Añadir entrada en muro - Visibilidad  todos',
-	'mechanics:publish:object:hjwall:everybody:desc' => 'Cada vez que publiques algo en tu muro y en el selector de audiencia escojas "Toda la red" conseguirás %d puntos hasta un máximo de %d puntos.',
-	'mechanics:publish:object:hjwall:friends' => 'Añadir entrada en muro - Visibilidad amigos',
-	'mechanics:publish:object:hjwall:friends:desc' => 'Cada vez que publiques algo en tu muro y en el selector de audiencia escojas "Amigos" conseguirás %d puntos hasta un máximo de %d puntos.',
-	'mechanics:publish:object:hjwall:collection' => 'Añadir entrada en muro - Visibilidad colección de amigos',
+	'mechanics:publish:object:hjwall:mywall' => 'Publicar una entrada en tu muro',
+	'mechanics:publish:object:hjwall:mywall:desc' => 'Cada vez que publiques algo en tu muro conseguirás %d puntos hasta un máximo de %d puntos.',
+
+	'mechanics:publish:object:hjwall:otherwall' => 'Publicar una entrada en un muro distinto al tuyo',
+	'mechanics:publish:object:hjwall:otherwall:desc' => 'Cada vez que publiques algo en un muro distinto al muro conseguirás %d puntos hasta un máximo de %d puntos.',
+
+	'mechanics:publish:object:hjwall:group' => 'Publicar una entrada en el muro de un grupo de tu propiedad',
+	'mechanics:publish:object:hjwall:group:desc' => 'Cada vez que publiques algo en el muro de un grupo de tu propiedad conseguirás %d puntos hasta un máximo de %d puntos.',
+
+	'mechanics:publish:object:hjwall:group:notgroupowner' => 'Publicar una entrada en el muro de un grupo que no es de tu propiedad',
+	'mechanics:publish:object:hjwall:group:notgroupowner:desc' => 'Cada vez que publiques algo en el muro de un grupo que no sea de tu propiedad conseguirás %d puntos hasta un máximo de %d puntos.',
+		
+	'mechanics:publish:object:hjwall:private' => 'Publicar una entrada con visibilidad "Privado"',
+	'mechanics:publish:object:hjwall:private:desc' => 'Cada vez que publiques una entrada y en el selector de audiencia escojas "Privado" conseguirás %d puntos hasta un máximo de %d puntos.',
+	'mechanics:publish:object:hjwall:everybody' => 'Publicar una entrada con visibilidad "Toda la red"',
+	'mechanics:publish:object:hjwall:everybody:desc' => 'Cada vez que publiques una entrada y en el selector de audiencia escojas "Toda la red" conseguirás %d puntos hasta un máximo de %d puntos.',
+	'mechanics:publish:object:hjwall:friends' => 'Publicar una entrada con visibilidad "Amigos"',
+	'mechanics:publish:object:hjwall:friends:desc' => 'Cada vez que publiques una entrada y en el selector de audiencia escojas "Amigos" conseguirás %d puntos hasta un máximo de %d puntos.',
+	'mechanics:publish:object:hjwall:collection' => 'Publicar una entrada con visibilidad para una colección de amigos',
 	'mechanics:publish:object:hjwall:collection:desc' => 'Cada vez que publiques algo en tu muro y en el selector de audiencia escojas una de tus colecciones de amigos conseguirás %d puntos hasta un máximo de %d puntos.',
 		
 	'mechanics:join:group:user:reverse' => 'Alguien se une a alguno de mis grupos ',
@@ -723,6 +735,21 @@ Ver y responder en el debate:
 	'mechanics:create:object:group:photo:notgroupowner:desc' => 'Cada vez que subas una foto a algún álbum de un grupo que no sea de tu propiedad conseguirás %d puntos hasta un máximo de %d puntos.',
 	'mechanics:create:object:group:photo:reverse' => 'Alguien añade una foto en alguno de mis grupos',
 	'mechanics:create:object:group:photo:reverse:desc' => 'Cada vez que alguien suba una foto a un álbum de alguno de tus grupos conseguirás %d puntos hasta un máximo de %d puntos.',
+
+	'mechanics:create:object:album:private' => 'Hacer que la visibilidad de un álbum sea "Privado"',
+	'mechanics:create:object:album:private:desc' => 'Cada vez que hagas que la visibilidad de un álbum sea "Privado" conseguirás %d puntos hasta un máximo de %d puntos.',
+		
+	'mechanics:create:object:album:friends' => 'Hacer que la visibilidad de un álbum sea "Amigos"',
+	'mechanics:create:object:album:friends:desc' => 'Cada vez que hagas que la visibilidad de un álbum sea "Amigos" conseguirás %d puntos hasta un máximo de %d puntos.',
+		
+	'mechanics:create:object:album:everybody' => 'Hacer que la visibilidad de un álbum sea "Toda la red"',
+	'mechanics:create:object:album:everybody:desc' => 'Cada vez que hagas que la visibilidad de un álbum sea "Toda la red" conseguirás %d puntos hasta un máximo de %d puntos.',
+		
+	'mechanics:create:object:album:collection' => 'Hacer que la visibilidad de un álbum sea una colección de amigos o un grupo',
+	'mechanics:create:object:album:collection:desc' => 'Cada vez que hagas que la visibilidad de un álbum sea una colección de amigos o un grupo conseguirás %d puntos hasta un máximo de %d puntos.',
+		
+		
+		
 	'mechanics:create:annotation:comment:group' => 'Añadir un comentario en el muro de un grupo',
 	'mechanics:create:annotation:comment:group:desc' => 'Cada vez que comentes algo en el muro de un grupo conseguirás %d puntos hasta un máximo de %d puntos.',
 	'mechanics:create:annotation:comment:group:reverse' => 'Alguien añade un comentario en alguno de mis grupos',
@@ -731,14 +758,14 @@ Ver y responder en el debate:
 	'mechanics:create:object:groupforumtopic' => 'Añadir un tema de discusión en un grupo',
 	'mechanics:create:object:groupforumtopic:desc' => 'Cada vez crees un tema de discusión en un grupo conseguirás %d puntos hasta un máximo de %d puntos.',
 
-	'mechanics:create:group:default' => 'Crear grupo',
+	'mechanics:create:group:default' => 'Crear un grupo',
 	'mechanics:create:group:default:desc' => 'Cada vez que crees un grupo conseguirás %d puntos hasta un máximo de %d puntos.',
 		
-	'mechanics:create:annotation:comment' => 'Añadir comentario',
+	'mechanics:create:annotation:comment' => 'Añadir un comentario',
 	'mechanics:create:annotation:comment:desc' => 'Cada vez que comentes algo conseguirás %d puntos hasta un máximo de %d puntos.',
 		
 	'mechanics:create:annotation:comment:reverse' => 'Recibir un comentario',
-	'mechanics:create:annotation:comment:reverse:desc' => 'Cada vez alguien comentes algo que hayas publicado conseguirás %d puntos hasta un máximo de %d puntos.',
+	'mechanics:create:annotation:comment:reverse:desc' => 'Cada vez alguien comente algo que hayas publicado conseguirás %d puntos hasta un máximo de %d puntos.',
 
 	'mechanics:create:annotation:group_topic_post' => 'Responder a un tema de discusión',
 	'mechanics:create:annotation:group_topic_post:desc' => 'Cada vez que respondas a un tema de discusión de un grupo conseguirás %d puntos hasta un máximo de %d puntos.',
@@ -756,8 +783,17 @@ Ver y responder en el debate:
 	'mechanics:login:user:default' => 'Iniciar sesión',
 	'mechanics:login:user:default:desc' => 'Cada vez que inicies sesión recibirás %d puntos hasta un máximo de %d puntos.',
 
-	'mechanics:profileupdate:user:default' => 'Actualizar tu perfil',
-	'mechanics:profileupdate:user:default:desc' => 'Cada vez que actualices tu perfil recibirás %d puntos hasta un máximo de %d puntos.',
+	'mechanics:profileupdate:user:everybody' => 'Actualizar algún campo de perfil con acceso Toda la red',
+	'mechanics:profileupdate:user:everybody:desc' => 'Cada vez que actualices tu perfil, y el acceso a alguno de los campos sea Toda la red, te recibirás %d puntos hasta un máximo de %d puntos.',
+		
+	'mechanics:profileupdate:user:private' => 'Actualizar algún campo de perfil con acceso Privado',
+	'mechanics:profileupdate:user:private:desc' => 'Cada vez que actualices tu perfil, y el acceso a alguno de los campos sea Privado, te recibirás %d puntos hasta un máximo de %d puntos.',
+	
+	'mechanics:profileupdate:user:friends' => 'Actualizar algún campo de perfil con acceso Amigos',
+	'mechanics:profileupdate:user:friends:desc' => 'Cada vez que actualices tu perfil, y el acceso a alguno de los campos sea Amigos, te recibirás %d puntos hasta un máximo de %d puntos.',
+	
+	'mechanics:profileupdate:user:collection' => 'Actualizar algún campo de perfil con acceso a una colección de amigos',
+	'mechanics:profileupdate:user:collection:desc' => 'Cada vez que actualices tu perfil, y el acceso a alguno de los campos sea una colección de amigos, te recibirás %d puntos hasta un máximo de %d puntos.',
 	
 	'mechanics:profileiconupdate:user:default' => 'Subir avatar',
 	'mechanics:profileiconupdate:user:default:desc' => 'Cada vez que actualices tu avatar recibirás %d puntos hasta un máximo de %d puntos.',
