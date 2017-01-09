@@ -19,7 +19,7 @@ p, body {
 
 /* Hacemos más ancha la topbar y ponemos imagen de fondo */
 .elgg-page-topbar {
-    background: url('/mod/pesedia/img/header-bg.jpg');
+    background: url('/mod/pesedia-plugin/img/header-bg.jpg');
     background-size: cover;
     height: 40px;
 }
