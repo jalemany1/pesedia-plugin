@@ -43,6 +43,10 @@ function pesedia_init() {
 	/* Repair hashtags for your later social network search */
 	// Delete the # symbol
 	elgg_register_plugin_hook_handler('extract:qualifiers', 'all', 'standardize_hashtag_format');
+
+	/* Accept-Revoke-Reject actions limited to Request View*/
+	// Delete menu actions
+	elgg_register_plugin_hook_handler('register', 'menu:friendship', 'enable_actions_only_in_requestview', 999);
 }
 
 
@@ -176,5 +180,23 @@ function standardize_hashtag_format($hook, $type, $return, $params) {
 	foreach ($return['hashtags'] as &$htag) {
 		$htag = substr($htag, 1);
 	}
+	return $return;
+}
+
+
+/**
+ * When 'user_friends' plugin is enabled, this function filters the
+ * actions to enable them only in Request View
+ *
+ * @param string 	$hook 		'register'
+ * @param string 	$type 		'menu:friendship'
+ * @param array 	$return 	Scraped content + hashtags formatted
+ * @param array 	$params 	Hook params
+ * @return ElggMenuItem[]
+ */
+function enable_actions_only_in_requestview($hook, $type, $return, $params) {
+	$pattern = '/friends\/.*\/requests/';
+	if(!preg_match($pattern, $params['base_url']))
+		return array();
 	return $return;
 }
