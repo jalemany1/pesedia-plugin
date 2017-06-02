@@ -47,6 +47,12 @@ function pesedia_init() {
 	/* Accept-Revoke-Reject actions limited to Request View*/
 	// Delete menu actions
 	elgg_register_plugin_hook_handler('register', 'menu:friendship', 'enable_actions_only_in_requestview', 999);
+	
+	/* Repair ClosedMembership-Group access invitation */
+	// Add access grant
+	elgg_register_event_handler('create', 'relationship', 'add_access_grant_to_invited_group');
+	// Revoke access grant
+	elgg_register_event_handler('delete', 'relationship', 'del_access_grant_to_invited_group');
 }
 
 
@@ -190,7 +196,7 @@ function standardize_hashtag_format($hook, $type, $return, $params) {
  *
  * @param string 	$hook 		'register'
  * @param string 	$type 		'menu:friendship'
- * @param array 	$return 	Scraped content + hashtags formatted
+ * @param array 	$return 	...
  * @param array 	$params 	Hook params
  * @return ElggMenuItem[]
  */
@@ -199,4 +205,34 @@ function enable_actions_only_in_requestview($hook, $type, $return, $params) {
 	if(!preg_match($pattern, $params['base_url']))
 		return array();
 	return $return;
+}
+
+/**
+ * When 'groups_invite' plugin is enabled and a user invite another, this function
+ * give a temporary access grant to the group.
+ *
+ * @param string        $event          'create'
+ * @param string        $type           'relationship'
+ * @param array         $object         ElggRelationship
+ * @return boolean
+ */
+function add_access_grant_to_invited_group($event, $type, $object) {
+	if ($object->relationship == 'invited') {
+		add_entity_relationship($object->guid_one, 'access_grant', $object->guid_two);
+	}
+}
+
+/**
+ * When 'groups_invite' plugin is enabled and a user decline a group invitation,
+ * this function remove the temporary access grant to the group.
+ *
+ * @param string        $event          'delete'
+ * @param string        $type           'relationship'
+ * @param array         $object         ElggRelationship
+ * @return boolean
+ */
+function del_access_grant_to_invited_group($event, $type, $object) {
+	if ($object->relationship == 'invited') {
+		remove_entity_relationship($object->guid_one, 'access_grant', $object->guid_two);
+	}
 }
