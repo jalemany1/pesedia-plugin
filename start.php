@@ -102,7 +102,7 @@ function notifier_topbar_menu_setup_pesedia ($hook, $type, $return, $params) {
 		// Get amount of unread notifications
 		$count = (int)notifier_count_unread();
 
-		$text = elgg_view_icon('file-text-o'); // Este es el cambio 
+		$text = elgg_view_icon('bell'); // Este es el cambio 
 		$tooltip = elgg_echo("notifier:unreadcount", array($count));
 
 		if ($count > 0) {
