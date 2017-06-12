@@ -278,37 +278,3 @@ function menus_access_river_menu_setup($hook, $type, $return, $params) {
 	$return[] = $item_menu;
 	return $return;
 }
-
-/**
- * Get an icon representing access level
- *
- * @param ElggEntity $entity Entity
- * @return string
- */
-function menus_access_get_icon(ElggEntity $entity) {
-	$access_id = $entity->access_id;
-	switch ($access_id) {
-		case ACCESS_FRIENDS :
-			$icon = 'user';
-			break;
-		case ACCESS_PUBLIC :
-		case ACCESS_LOGGED_IN :
-			$icon = 'globe';
-			break;
-		case ACCESS_PRIVATE :
-			$icon = 'lock';
-			break;
-		default:
-			$collection = get_access_collection($access_id);
-			$owner = get_entity($collection->owner_guid);
-			if ($owner instanceof ElggGroup) {
-				$icon = 'users';
-			} else {
-				$icon = 'cog';
-			}
-			break;
-	}
-
-	$params = ['entity' => $entity];
-	return elgg_trigger_plugin_hook('access:icon', $entity->getType(), $params, $icon);
-}
