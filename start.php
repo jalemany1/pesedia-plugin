@@ -53,6 +53,9 @@ function pesedia_init() {
 	elgg_register_event_handler('create', 'relationship', 'add_access_grant_to_invited_group');
 	// Revoke access grant
 	elgg_register_event_handler('delete', 'relationship', 'del_access_grant_to_invited_group');
+
+	/* Extended Access_Menu_Item plugin to provide support for the River */
+	elgg_register_plugin_hook_handler('register', 'menu:river', 'menus_access_river_menu_setup', 999);
 }
 
 
@@ -235,4 +238,77 @@ function del_access_grant_to_invited_group($event, $type, $object) {
 	if ($object->relationship == 'invited') {
 		remove_entity_relationship($object->guid_one, 'access_grant', $object->guid_two);
 	}
+}
+
+/**
+ * When 'user_friends' plugin is enabled, this function filters the
+ * actions to enable them only in Request View
+ *
+ * @param string 	$hook 		'register'
+ * @param string 	$type 		'menu:river'
+ * @param array 	$return 	Array of ElggMenuItems[]
+ * @param array 	$params 	Hook params
+ * @return ElggMenuItem[]
+ */
+function menus_access_river_menu_setup($hook, $type, $return, $params) {
+	$item = elgg_extract('item', $params);
+	$entity = $item->getObjectEntity();
+
+	if ($entity instanceof ElggUser) {
+		$item_menu = \ElggMenuItem::factory([
+			'name' => 'access',
+			'data' => array('subsection' => 'access'),
+			'text' => elgg_view_icon('globe'),
+			'data-guid' => $entity->guid,
+		]);
+	} else {
+		$item_menu = \ElggMenuItem::factory([
+			'name' => 'access',
+			'data' => array('subsection' => 'access'),
+			'text' => elgg_view_icon(menus_access_get_icon($entity)),
+			'href' => "ajax/view/menus/access?guid=$entity->guid",
+			'link_class' => 'elgg-lightbox',
+			'data-guid' => $entity->guid,
+			'data-colorbox-opts' => json_encode([
+				'maxWidth' => '600px'
+			]),
+		]);
+	}
+
+	$return[] = $item_menu;
+	return $return;
+}
+
+/**
+ * Get an icon representing access level
+ *
+ * @param ElggEntity $entity Entity
+ * @return string
+ */
+function menus_access_get_icon(ElggEntity $entity) {
+	$access_id = $entity->access_id;
+	switch ($access_id) {
+		case ACCESS_FRIENDS :
+			$icon = 'user';
+			break;
+		case ACCESS_PUBLIC :
+		case ACCESS_LOGGED_IN :
+			$icon = 'globe';
+			break;
+		case ACCESS_PRIVATE :
+			$icon = 'lock';
+			break;
+		default:
+			$collection = get_access_collection($access_id);
+			$owner = get_entity($collection->owner_guid);
+			if ($owner instanceof ElggGroup) {
+				$icon = 'users';
+			} else {
+				$icon = 'cog';
+			}
+			break;
+	}
+
+	$params = ['entity' => $entity];
+	return elgg_trigger_plugin_hook('access:icon', $entity->getType(), $params, $icon);
 }
