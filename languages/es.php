@@ -29,6 +29,13 @@ return array(
 
 	'groups:add' => 'Crear grupo',
 
+	// groups(modbyGuillem)
+	'groups:policy:public' => 'Público: libre entrada, visibilidad y permiso para invitar',
+	'groups:policy:privateVisPerm' => 'Privado, visible y con permisos: Invitación requerida, visible y permiso para invitar',
+	'groups:policy:privateVisNoPerm' => 'Privado, visible y sin invitaciones: Invitación requerida, visible y sin permiso para invitar',
+	'groups:policy:privateNoVisPerm' => 'Privado, invitaciones y no visible: Invitación requerida, no visible y permiso para invitar',
+	'groups:policy:private' => 'Privado: Invitación requerida, no visible y sin permiso para invitar',
+
 	// group list
 
 	'groups:list:all' => 'Grupos',

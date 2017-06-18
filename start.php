@@ -56,6 +56,11 @@ function pesedia_init() {
 
 	/* Extended Access_Menu_Item plugin to provide support for the River */
 	elgg_register_plugin_hook_handler('register', 'menu:river', 'menus_access_river_menu_setup', 999);
+
+	/* Simplify group creation */
+	elgg_unregister_action('groups/edit');
+	elgg_register_action('groups/edit', __DIR__ . '/actions/groups/edit.php');
+	elgg_register_css('policies', elgg_get_simplecache_url('policies.css'));
 }
 
 
