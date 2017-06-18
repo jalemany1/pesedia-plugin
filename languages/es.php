@@ -582,7 +582,7 @@ Ver y responder en el debate:
 	'badge_type:value:status' => 'Estatus',
 	'badge_type:value:experience' => 'Experiencia',
 	'badge_type:value:purchase' => 'En venta',
-	'badge_type:value:surprise' => 'Sorpresa',
+	'badge_type:value:surprise' => 'Especial',
 
 	'label:hjbadge:rules' => 'Requerimientos para adquirir este logro',
 	'mechanics:badges:rules' => 'Definiciones de reglas',
@@ -808,8 +808,8 @@ Ver y responder en el debate:
 	'mechanics:join:group:user' => 'Unirte a un grupo',
 	'mechanics:join:group:user:desc' => 'Cada vez que te unas a un grupo recibirás %d puntos hasta un máximo de %d puntos.',
 	
-	'mechanics:create:relationship:friend' => 'Han aceptado tu solicitud de amistad',
-	'mechanics:create:relationship:friend:desc' => 'Cada vez que acepten tu solicitud de amistad recibirás %d puntos hasta un máximo de %d puntos.',
+	'mechanics:create:relationship:friend' => 'Has hecho un amigo',
+	'mechanics:create:relationship:friend:desc' => 'Cada vez que hagas un amigo recibirás %d puntos hasta un máximo de %d puntos.',
 	
 	'mechanics:create:relationship:friend:reverse' => 'Aceptar una solicitud de amistad',
 	'mechanics:create:relationship:friend:reverse:desc' => 'Cada que vez que aceptes una solicitud de amistad recibirás %d puntos hasta un máximo de %d puntos.',
