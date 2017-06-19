@@ -2,7 +2,7 @@
 #images{
 	float:left;
 	min-width: 50px; /*suggest a min-width & min-height*/
-	min-height: 100px;
+	min-height: 150px;
 }
 
 #polic li{
@@ -11,8 +11,9 @@
 	background-repeat: no-repeat;
 }
 
-#polic li > input{
+#polic li > label > input{
 	margin-top: 17.5px;
+	margin-left: 3px;
 }
 
 #polic li:nth-of-type(1){
