@@ -18,32 +18,8 @@ elgg_push_context("group-edit");
 // build the group profile fields
 echo elgg_view("groups/edit/profile", $vars);
 
-// build the group access options
-//echo elgg_view("groups/edit/access", $vars);
-
-// build the group tools options
-//echo elgg_view("groups/edit/tools", $vars);
-
-// build the group options as buttons
-//echo elgg_view("groups/edit/easy", $vars);
-
-// build the group policy options as a set of radio buttons
-
-?>
-<div id="images">
-
-	<div id="first"></div>
-
-</div>
-
-	<?php echo elgg_view('input/radio', array(
-		'name' => 'policy','id' => 'polic',
-		'options' => array(elgg_echo('groups:policy:private') => 5, elgg_echo('groups:policy:privateNoVisPerm') => 4, elgg_echo('groups:policy:privateVisNoPerm') => 3, elgg_echo('groups:policy:privateVisPerm') => 2, elgg_echo('groups:policy:public') => 1),
-	));
-
-	?>
-
-<?php
+// build the group type options
+echo elgg_view("groups/edit/type", $vars);
 
 // display the save button and some additional form data
 if ($entity) {

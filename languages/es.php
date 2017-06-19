@@ -28,13 +28,18 @@ return array(
 	// groups
 
 	'groups:add' => 'Crear grupo',
+	'groups:add:' => 'Crear grupo',
 
 	// groups(modbyGuillem)
-	'groups:policy:public' => 'Público: libre entrada, visibilidad y permiso para invitar',
+	'groups:policy:public2' => 'Público: libre entrada, visibilidad y permiso para invitar',
 	'groups:policy:privateVisPerm' => 'Privado, visible y con permisos: Invitación requerida, visible y permiso para invitar',
 	'groups:policy:privateVisNoPerm' => 'Privado, visible y sin invitaciones: Invitación requerida, visible y sin permiso para invitar',
 	'groups:policy:privateNoVisPerm' => 'Privado, invitaciones y no visible: Invitación requerida, no visible y permiso para invitar',
-	'groups:policy:private' => 'Privado: Invitación requerida, no visible y sin permiso para invitar',
+	'groups:policy:private2' => 'Privado: Invitación requerida, no visible y sin permiso para invitar',
+	//(modbyJAlemany)
+	'groups:policy:public' => 'Público: Todos pueden ver el grupo, los miembros y sus publicaciones.',
+	'groups:policy:private' => 'Privado: Todos pueden encontrar el grupo y ver quien esta en él. Solo los miembros pueden ver las publicaciones.'
+	'groups:policy:secret' => 'Secreto: Solo los miembros pueden encontrar el grupo y ver su contenido.'
 
 	// group list
 
