@@ -8,6 +8,14 @@
  * @package ElggGroups
  */
 
+$options = array();
+
+if (elgg_get_plugin_setting('hidden_groups', 'groups') == 'yes')
+	$options[elgg_echo('groups:policy:secret')] = 5;
+
+$options[elgg_echo('groups:policy:private')] = 2;
+$options[elgg_echo('groups:policy:public')] = 1;
+
 ?>
 
 <div>
@@ -16,13 +24,7 @@
 	<?php echo elgg_view('input/radio', array(
 		'name' => 'policy',
 		'id' => 'polic',
-		'options' => array(
-			elgg_echo('groups:policy:secret') => 5,
-			//elgg_echo('groups:policy:privateNoVisPerm') => 4,
-			//elgg_echo('groups:policy:privateVisNoPerm') => 3,
-			elgg_echo('groups:policy:private') => 2,
-			elgg_echo('groups:policy:public') => 1
-		),
+		'options' => $options,
 	));
 
 	?>

@@ -96,39 +96,10 @@ if (!$group->name) {
 	forward(REFERER);
 }
 
-// Set group tool options (only pass along saved entities)
-$tool_entity = !$is_new_group ? $group : null;
-$tool_options = groups_get_group_tool_options($tool_entity);
-if ($tool_options) {
-	foreach ($tool_options as $group_option) {
-		$option_toggle_name = $group_option->name . "_enable";
-		//$option_default = $group_option->default_on ? 'yes' : 'no';
-		
-
-		$group->$option_toggle_name = 'yes';
-	}
-}
-
-// Group membership - should these be treated with same constants as access permissions?
-//$value = get_input('membership');
-//if ($group->membership === null || $value !== null) {
-//	$is_public_membership = ($value == ACCESS_PUBLIC);
-//	$group->membership = $is_public_membership ? ACCESS_PUBLIC : ACCESS_PRIVATE;
-//}
-
-//$group->setContentAccessMode((string)ElggGroup::CONTENT_ACCESS_MODE_UNRESTRICTED);
-
-if ($is_new_group) {
-	$group->access_id = ACCESS_PUBLIC;
-}
-
 $old_owner_guid = $is_new_group ? 0 : $group->owner_guid;
 
-//$value = get_input('owner_guid');
-$new_owner_guid = $old_owner_guid;//($value === null) ? $old_owner_guid : (int)$value;
-
-
-
+$value = get_input('owner_guid');
+$new_owner_guid = ($value === null) ? $old_owner_guid : (int)$value;
 
 if (!$is_new_group && $new_owner_guid && $new_owner_guid != $old_owner_guid) {
 	// verify new owner is member and old owner/admin is logged in
@@ -165,200 +136,68 @@ if ($is_new_group) {
 	}
 }
 
-// Invisible group support
-// @todo this requires save to be called to create the acl for the group. This
-// is an odd requirement and should be removed. Either the acl creation happens
-// in the action or the visibility moves to a plugin hook
-/*if (elgg_get_plugin_setting('hidden_groups', 'groups') == 'yes') {
-	$value = get_input('vis');
-	if ($is_new_group || $value !== null) {
-		$visibility = (int)$value;
+//Group policy
+$policy = (int) get_input('policy', 0);
 
-		if ($visibility == ACCESS_PRIVATE) {
-			// Make this group visible only to group members. We need to use
-			// ACCESS_PRIVATE on the form and convert it to group_acl here
-			// because new groups do not have acl until they have been saved once.
-			$visibility = $group->group_acl;
+switch($policy){
+	/* Secret Group privacy */
+	case 5:
+		//Membership (ACCESS_PRIVATE == Closed-Users must be invited)
+		$group->membership = ACCESS_PRIVATE;
 
-			// Force all new group content to be available only to members
-			$group->setContentAccessMode(ElggGroup::CONTENT_ACCESS_MODE_MEMBERS_ONLY);
-		}
+		//Visibility
+		$group->access_id = $group->group_acl;
 
-		$group->access_id = $visibility;
-	}
+		//GroupContent Accessibility
+		$group->setContentAccessMode((string)ElggGroup::CONTENT_ACCESS_MODE_MEMBERS_ONLY);
+
+		break;
+	
+	/* Private Group privacy */
+	case 2:
+		//Membership (ACCESS_PRIVATE == Closed-Users must be invited)
+		$group->membership = ACCESS_PRIVATE;
+		
+		//Visibility
+		$group->access_id = ACCESS_PUBLIC;
+
+		//GroupContent Accessibility
+		$group->setContentAccessMode((string)ElggGroup::CONTENT_ACCESS_MODE_MEMBERS_ONLY);
+
+		break;
+
+	/* Public Group privacy */
+	case 1:
+		//Membership (ACCESS_PUBLIC == Open-Any user may join)
+		$group->membership = ACCESS_PUBLIC;
+		
+		//Visibility
+		$group->access_id = ACCESS_PUBLIC;
+
+		//GroupContent Accessibility
+		$group->setContentAccessMode((string)ElggGroup::CONTENT_ACCESS_MODE_UNRESTRICTED);
+
+		break;
+
+	default:
+		register_error(elgg_echo("groups:save_error"));
+		forward(REFERER);
+		break;
 }
 
-*/
+// Set group tool options (only pass along saved entities)
+$tool_entity = !$is_new_group ? $group : null;
+$tool_options = groups_get_group_tool_options($tool_entity);
+if ($tool_options) {
+	foreach ($tool_options as $group_option) {
+		$option_toggle_name = $group_option->name . "_enable";
 
-//Group policy
-// only set if submitted
-
-$policy = get_input('policy', 1, false);
-
-if($policy != null) {
-	switch($policy){
-		case 1://system_message(elgg_echo("case public"));
-			//Membership			
-			$group->membership = ACCESS_PUBLIC;
-			//tool option invite other members
-			
-			if($tool_options){
-				$tool_options = array_values($tool_options);
-				$option_toggle_name = $tool_options[2]->name . "_enable";
-				$group->$option_toggle_name = 'yes';
-			}		
-			/*$c = 0;
-			foreach($tool_options as $tool )	{	
-				$c += 1;	
-				if ($c === 3 && $tool) {
-					
-					$option_toggle_name = $tool->name . "_enable";
-					$group->$option_toggle_name = 'yes';
-					break;
-				}
-				
-			}*/
-			
-			//Visibility
-
-			$group->setContentAccessMode((string)ElggGroup::CONTENT_ACCESS_MODE_UNRESTRICTED);
-
-			if (elgg_get_plugin_setting('hidden_groups', 'groups') == 'yes') {
-				$value = ACCESS_PUBLIC;
-				if ($is_new_group || $value !== null) {
-					$visibility = (int)$value;
-					$group->access_id = $visibility;
-				}
-			}
-			
-
-			break;
-
-		case 2://system_message(elgg_echo("case private alloweds"));
-			//Membership			
-			$group->membership = ACCESS_PRIVATE;
-			//tool option invite other members
-			
-			if($tool_options){
-				$tool_options = array_values($tool_options);
-				$option_toggle_name = $tool_options[2]->name . "_enable";
-				$group->$option_toggle_name = 'yes';
-			}		
-			/*$c = 0;
-			foreach($tool_options as $tool )	{	
-				$c += 1;	
-				if ($c === 3 && $tool) {
-					
-					$option_toggle_name = $tool->name . "_enable";
-					$group->$option_toggle_name = 'yes';
-					break;
-				}
-				
-			}*/
-			
-			//Visibility
-
-			$group->setContentAccessMode((string)ElggGroup::CONTENT_ACCESS_MODE_UNRESTRICTED);
-
-			if (elgg_get_plugin_setting('hidden_groups', 'groups') == 'yes') {
-				$value = ACCESS_PUBLIC;
-				if ($is_new_group || $value !== null) {
-					$visibility = (int)$value;
-					$group->access_id = $visibility;
-				}
-			}
-			
-			break;
-
-		case 3://system_message(elgg_echo("case visible closed"));
-			//Membership
-			$group->membership = ACCESS_PRIVATE;
-			//tool option invite other members			
-			
-			if($tool_options){
-				$tool_options = array_values($tool_options);
-				$option_toggle_name = $tool_options[2]->name . "_enable";
-				$group->$option_toggle_name = 'no';
-			}
-			//Visibility
-
-			$group->setContentAccessMode((string)ElggGroup::CONTENT_ACCESS_MODE_UNRESTRICTED);
-
-			if (elgg_get_plugin_setting('hidden_groups', 'groups') == 'yes') {
-				$value = ACCESS_PUBLIC;
-				if ($is_new_group || $value !== null) {
-					$visibility = (int)$value;
-					$group->access_id = $visibility;
-				}
-			}
-			
-
-			break;
-
-		case 4://system_message(elgg_echo("case invisible closed"));
-			//Membership			
-			$group->membership = ACCESS_PRIVATE;
-			
-			//tool option invite other members			
-			if($tool_options){
-				$tool_options = array_values($tool_options);
-				$option_toggle_name = $tool_options[2]->name . "_enable";
-				$group->$option_toggle_name = 'yes';
-			}		
-			//Visibility
-
-			if (elgg_get_plugin_setting('hidden_groups', 'groups') == 'yes') {
-				$value = ACCESS_PRIVATE;
-				if ($is_new_group || $value !== null) {
-					$visibility = (int)$value;
-					// Make this group visible only to group members. We need to use
-					// ACCESS_PRIVATE on the form and convert it to group_acl here
-					// because new groups do not have acl until they have been saved once.
-					$visibility = $group->group_acl;
-
-					// Force all new group content to be available only to members
-					$group->setContentAccessMode(ElggGroup::CONTENT_ACCESS_MODE_MEMBERS_ONLY);
-				}
-			}
-
-			
-		
-
-			break;
-
-		case 5://system_message(elgg_echo("case full closed"));
-			//Membership
-			$group->membership = ACCESS_PRIVATE;			
-			
-			//tool option invite other members			
-			if($tool_options){
-				$tool_options = array_values($tool_options);
-				$option_toggle_name = $tool_options[2]->name . "_enable";
-				$group->$option_toggle_name = 'no';
-			}
-			//Visibility
-
-			
-
-			if (elgg_get_plugin_setting('hidden_groups', 'groups') == 'yes') {
-				$value = ACCESS_PRIVATE;
-				if ($is_new_group || $value !== null) {
-					$visibility = (int)$value;
-					// Make this group visible only to group members. We need to use
-					// ACCESS_PRIVATE on the form and convert it to group_acl here
-					// because new groups do not have acl until they have been saved once.
-					$visibility = $group->group_acl;
-
-					// Force all new group content to be available only to members
-					$group->setContentAccessMode(ElggGroup::CONTENT_ACCESS_MODE_MEMBERS_ONLY);
-				}
-			}
-
-						
-
-			break;
-
-
+		if (($option_toggle_name == "wall_enable") ||
+			($option_toggle_name == "invites_enable" && $policy == 1)) {
+			$group->$option_toggle_name = 'yes';
+		} else {
+			$group->$option_toggle_name = 'no';
+		}
 	}
 }
 

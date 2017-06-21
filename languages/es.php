@@ -40,7 +40,7 @@ return array(
 	'groups:policy:public' => 'Público: Todos pueden ver el grupo, los miembros y sus publicaciones.',
 	'groups:policy:private' => 'Privado: Todos pueden encontrar el grupo y ver quien esta en él. Solo los miembros pueden ver las publicaciones.',
 	'groups:policy:secret' => 'Secreto: Solo los miembros pueden encontrar el grupo y ver su contenido.',
-	'groups:types' => 'Selecciona Privacidad',
+	'groups:types' => 'Selecciona privacidad del grupo',
 
 	// group list
 
@@ -68,8 +68,8 @@ return array(
 	'user:groups:group_membership_visibility:help' => 'Aquí puedes restringir la visiblidad de tus grupos a un subconjunto de usuarios. Ten encuenta que la configuración de un grupo podría permitir que seas visto en la lista de sus miembros.',
 	'user:groups:visibility:private' => 'Solo yo',
 	'user:groups:visibility:friends' => 'Amigos',
-	'user:groups:visibility:logged_in' => 'Conectado en usuarios',
-	'user:groups:visibility:public' => 'Cada uno',
+	'user:groups:visibility:logged_in' => 'Usuarios conectados',
+	'user:groups:visibility:public' => 'Toda la red',
 	'user:groups:allow_visibility_override' => 'Permitir sobreescribir la visibilidad',
 	'user:groups:allow_visibility_override:help' => 'Permitir a usuarios individuales cambiar la configuración de la visibilidad de su lista de pertenencia a grupo',
 
