@@ -159,7 +159,7 @@ switch($policy){
 		$group->membership = ACCESS_PRIVATE;
 		
 		//Visibility
-		$group->access_id = ACCESS_PUBLIC;
+		$group->access_id = ACCESS_LOGGED_IN;
 
 		//GroupContent Accessibility
 		$group->setContentAccessMode((string)ElggGroup::CONTENT_ACCESS_MODE_MEMBERS_ONLY);
@@ -172,7 +172,7 @@ switch($policy){
 		$group->membership = ACCESS_PUBLIC;
 		
 		//Visibility
-		$group->access_id = ACCESS_PUBLIC;
+		$group->access_id = ACCESS_LOGGED_IN;
 
 		//GroupContent Accessibility
 		$group->setContentAccessMode((string)ElggGroup::CONTENT_ACCESS_MODE_UNRESTRICTED);
