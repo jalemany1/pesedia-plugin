@@ -1055,8 +1055,33 @@ o ver el perfil de %s aquí:
 	'user:sort:last_action::asc' => 'Conectado más recientemente',
 	'user:sort:last_action::desc' => 'Conectado menos recientemente',
 
+
 	//pesedia
 	'pesedia:registration' => "El código de registro no es correcto",
 
+	//encuestas
+	'poll:menu:site' => "Encuestas"
+	'poll:all:title' => "Todas las encuestas"
+	'poll:add'		 => "Añadir nueva encuesta"
+
+	//notificaciones
+	'notifier:notifications' => "Notificaciones"
+	'friend:notifications:summary' => "te ha hecho su amigo"
+	'notifier:view:all' => "ver todas las notificaciones"
+	'interactions:action:comment:on:object' => "comentó en"
+	'notifier:clear_all' => "Borrar todo"
+	'notifier:deleteconfirm' => "Esta acción borrará todas las notificaciones incluídas las no leídas. ¿Está seguro de querer continuar?"
+	'notifier:dismiss_all' => "Rechazar todas"
+
+	//Amigos del usuario
+	'user:friends:index' => "Amigos"
+	'user:friends:requests' => "Peticiones"
+	'user:friends:collections' => "Colecciones"
+	'sort:user:search:label' => "Búsqueda"
+	'sort:user:search:placehold' => "Introduzca palabra de búsqueda"
+
+	//grupos
+	'sort:group:filter:label' => "Mostrar"
+	'sort:group:filter' => "Búsqueda"
 );
 
