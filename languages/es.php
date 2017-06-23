@@ -1060,28 +1060,40 @@ o ver el perfil de %s aquí:
 	'pesedia:registration' => "El código de registro no es correcto",
 
 	//encuestas
-	'poll:menu:site' => "Encuestas"
-	'poll:all:title' => "Todas las encuestas"
-	'poll:add'		 => "Añadir nueva encuesta"
+	'poll:menu:site' => "Encuestas",
+	'poll:all:title' => "Todas las encuestas",
+	'poll:add'		 => "Añadir nueva encuesta",
 
 	//notificaciones
-	'notifier:notifications' => "Notificaciones"
-	'friend:notifications:summary' => "te ha hecho su amigo"
-	'notifier:view:all' => "ver todas las notificaciones"
-	'interactions:action:comment:on:object' => "comentó en"
-	'notifier:clear_all' => "Borrar todo"
-	'notifier:deleteconfirm' => "Esta acción borrará todas las notificaciones incluídas las no leídas. ¿Está seguro de querer continuar?"
-	'notifier:dismiss_all' => "Rechazar todas"
+	'notifier:notifications' => "Notificaciones",
+	'friend:notifications:summary' => "te ha hecho su amigo",
+	'notifier:view:all' => "ver todas las notificaciones",
+	'interactions:action:comment:on:object' => "comentó en",
+	'notifier:clear_all' => "Borrar todo",
+	'notifier:deleteconfirm' => "Esta acción borrará todas las notificaciones incluídas las no leídas. ¿Está seguro de querer continuar?",
+	'notifier:dismiss_all' => "Marcar todo como leído", //revisar
 
 	//Amigos del usuario
-	'user:friends:index' => "Amigos"
-	'user:friends:requests' => "Peticiones"
-	'user:friends:collections' => "Colecciones"
-	'sort:user:search:label' => "Búsqueda"
-	'sort:user:search:placehold' => "Introduzca palabra de búsqueda"
+	'user:friends:index' => "Amigos",
+	'user:friends:requests' => "Peticiones",
+	'user:friends:collections' => "Colecciones",
+	'sort:user:search:label' => "Búsqueda",
+	'sort:user:search:placeholder' => "Introduzca palabra de búsqueda",
+	'user:friends:last_action' => "Última visita", //revisar
 
 	//grupos
-	'sort:group:filter:label' => "Mostrar"
-	'sort:group:filter' => "Búsqueda"
-);
+	'sort:group:filter:label' => "Mostrar",
+	'sort:group:filter:' => "Todo",
+    'sort:group:search:label' 	=> "Búsqueda",
 
+	//buzón
+	'inbox:empty' => "Tu bandeja de entrada está vacía",
+	'inbox:new' => "Nuevo",
+	'inbox:search' => "Búsqueda",
+	'item:object:message:__private:plural' => "Mensajes privados",
+	'item:object:message:__private:singular' => "Mensaje privado",
+
+	//feed
+	'feed:and' => "y",
+	'feed:subject:other' => "otros"
+);
