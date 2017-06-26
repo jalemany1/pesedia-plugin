@@ -50,8 +50,12 @@ ul.elgg-breadcrumbs,
 	margin-right: 1%;
 }
 
-.profile-wall > .wall-container{
+/*.profile-wall > .wall-container{
 	margin-top: 0px;
+}*/
+.profile-wall > .elgg-main,
+.profile-wall .elgg-heading-main{
+	padding-top: 0px;
 }
 
 /* ***************************************
