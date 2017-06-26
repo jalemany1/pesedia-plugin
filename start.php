@@ -21,6 +21,9 @@ function pesedia_init() {
 	// Cambios de estilo para dar el "look" Pesedia
 	elgg_extend_view('css/elgg', 'pesedia/css', 1000);
 
+	/* Simplificar vista River ocultando elementos */
+	elgg_extend_view('css/elgg', 'pesedia/simplifier.css', 1000);
+
 	/* Para eliminar el menú contextual que aparece al mover el ratón sobre el avatar de un usaurio
 	 he modificado el fichero /pesediaDemo/public_html/vendor/elgg/elgg/js/lib/ui.js a partir de la línea 187
 	 Pendiente encontrar un método menos intrusivo.
@@ -61,6 +64,9 @@ function pesedia_init() {
 	elgg_unregister_action('groups/edit');
 	elgg_register_action('groups/edit', __DIR__ . '/actions/groups/edit.php');
 	elgg_register_css('policies', elgg_get_simplecache_url('policies.css'));
+
+	/* Improve topbar and include search in it */
+	elgg_register_event_handler('pagesetup', 'system', 'reformat_topbar', 1000);
 }
 
 
@@ -264,6 +270,7 @@ function menus_access_river_menu_setup($hook, $type, $return, $params) {
 			'name' => 'access',
 			'data' => array('subsection' => 'access'),
 			'text' => elgg_view_icon('globe'),
+			'href' => false,
 			'data-guid' => $entity->guid,
 		]);
 	} else {
@@ -282,4 +289,85 @@ function menus_access_river_menu_setup($hook, $type, $return, $params) {
 
 	$return[] = $item_menu;
 	return $return;
+}
+
+/**
+ * Rearrange menu items
+ */
+function reformat_topbar() {
+
+	elgg_unextend_view('page/elements/sidebar', 'search/header');
+	
+	if (elgg_is_logged_in()) {
+
+		$user = elgg_get_logged_in_user_entity();
+		/*$item = elgg_get_menu_item('topbar', 'profile');
+		if ($item) {
+			$icon = elgg_view('output/img', array(
+				'src' => $user->getIconURL('topbar'),
+				'alt' => $user->name,
+				'title' => $user->name,
+				'class' => 'elgg-border-plain elgg-transition',
+			));
+			$text = '<span class="profile-text">'.elgg_get_excerpt($user->name, 20).'</span>';
+			$item->setText($icon . $text);
+		}*/
+
+		elgg_register_menu_item('topbar', array(
+			'href' => false,
+			'name' => 'search',			
+			'text' => '<i class="fa fa-search fa-lg"></i>'.elgg_view('search/header'),
+			'priority' => 0,
+			'section' => 'alt',
+		));
+
+		elgg_register_menu_item('topbar', array(
+			'name' => 'home',
+			'text' => '<i class="fa fa-home fa-lg"></i> ',
+			'href' => "/",
+			'priority' => 2,
+			'section' => 'alt',
+		));
+
+		/*$item = elgg_get_menu_item('topbar', 'friends');
+		if ($item) {
+			$item->setSection('alt');
+		}
+
+		$item = elgg_get_menu_item('topbar', 'messages');
+		if ($item) {
+			$item->setHref("messages/inbox/{$user->name}");
+			$item->setSection('alt');
+		}*/
+
+		elgg_register_menu_item('topbar', array(
+			'name' => 'account',
+			'text' => '<i class="fa fa-cog fa-lg"></i> ',
+			'href' => "#",
+			'priority' => 300,
+			'section' => 'alt',
+			'link_class' => 'elgg-topbar-dropdown',
+		));
+		
+		$item = elgg_get_menu_item('topbar', 'usersettings');
+		if ($item) {
+			$item->setParentName('account');
+			$item->setText(elgg_echo('settings'));
+			$item->setPriority(103);
+		}
+
+		$item = elgg_get_menu_item('topbar', 'logout');
+		if ($item) {
+			$item->setParentName('account');
+			$item->setText(elgg_echo('logout'));
+			$item->setPriority(104);
+		}
+
+		$item = elgg_get_menu_item('topbar', 'administration');
+		if ($item) {
+			$item->setParentName('account');
+			$item->setText(elgg_echo('admin'));
+			$item->setPriority(101);
+		}
+	}
 }
