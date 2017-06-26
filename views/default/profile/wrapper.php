@@ -2,7 +2,7 @@
 /**
  * Profile info box
  */
-
+$owner = elgg_get_page_owner_entity();
 ?>
 
 <div class="profile elgg-col-3of3 mrn">
@@ -15,7 +15,10 @@
 	<?php
 		elgg_push_context('wall');
 		echo elgg_view('framework/wall/container', []);
-		echo elgg_view('framework/wall/owner', []);
+		echo elgg_view('lists/wall', array(
+			'entity' => $owner,
+			'limit' => elgg_extract('limit', $vars, elgg_get_config('default_limit')) ? : 10,
+		));
 		elgg_pop_context();
 	?>
 </div>
