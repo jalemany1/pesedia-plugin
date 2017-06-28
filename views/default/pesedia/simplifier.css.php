@@ -62,6 +62,10 @@ ul.elgg-breadcrumbs,
 	background-color: white;
 }
 
+.elgg-widget-add-control {
+	display: none;
+}
+
 /* ***************************************
 	TOPBAR MENU DROPDOWN
 *****************************************/

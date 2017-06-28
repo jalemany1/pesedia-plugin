@@ -1079,7 +1079,7 @@ o ver el perfil de %s aquí:
 	'user:friends:collections' => "Colecciones",
 	'sort:user:search:label' => "Búsqueda",
 	'sort:user:search:placeholder' => "Introduzca palabra de búsqueda",
-	'user:friends:last_action' => "Última visita", //revisar
+	'user:friends:last_action' => "Visto %s", //revisar
 
 	//grupos
 	'sort:group:filter:label' => "Mostrar",
