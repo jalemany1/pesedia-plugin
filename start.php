@@ -65,6 +65,20 @@ function pesedia_init() {
 	elgg_register_action('groups/edit', __DIR__ . '/actions/groups/edit.php');
 	elgg_register_css('policies', elgg_get_simplecache_url('policies.css'));
 
+	/* Rate friends */
+	//  - Register action
+	elgg_register_action('stars/rate', __DIR__ . '/actions/stars/rate.php');
+	// 	- Stars JS and CSS
+	elgg_define_js('jquery.rateit', array(
+		//'src' => '/mod/elgg_stars/vendors/rateit/jquery.rateit.min.js',
+		'src' => 'mod/pesedia-plugin/vendors/rateit/jquery.rateit.min.js',
+		'deps' => array('jquery'),
+	));
+	elgg_require_js('stars/init');
+	elgg_require_js('events');
+	elgg_extend_view('css/elgg', 'stars/css');
+	elgg_register_ajax_view('popup/rate-user');
+
 	/* Improve topbar and include search in it */
 	elgg_register_event_handler('pagesetup', 'system', 'reformat_topbar', 1000);
 }
@@ -270,7 +284,6 @@ function menus_access_river_menu_setup($hook, $type, $return, $params) {
 			'name' => 'access',
 			'data' => array('subsection' => 'access'),
 			'text' => elgg_view_icon('globe'),
-			'href' => false,
 			'data-guid' => $entity->guid,
 		]);
 	} else {

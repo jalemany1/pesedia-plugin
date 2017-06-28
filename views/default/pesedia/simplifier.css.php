@@ -58,6 +58,10 @@ ul.elgg-breadcrumbs,
 	padding-top: 0px;
 }
 
+.profile .elgg-inner {
+	background-color: white;
+}
+
 /* ***************************************
 	TOPBAR MENU DROPDOWN
 *****************************************/

@@ -1095,5 +1095,13 @@ o ver el perfil de %s aquí:
 
 	//feed
 	'feed:and' => "y",
-	'feed:subject:other' => "otros"
+	'feed:subject:other' => "otros",
+
+	//user rating
+	'stars:rate' => 'Valoración',
+    'stars:saving' => 'Guardando valoración...',
+    'stars:rate:error' => 'Error al guardar tu valoración',
+    'stars:rate:success' => 'Valoración guardada',
+    'stars:rate:alreadyrated' => 'No puede volver a valorar al usuario',
+	'rating_name:starrating' => "Valora tu relación con %s",
 );
