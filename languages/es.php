@@ -1874,7 +1874,7 @@ Ver y responder en el debate:
 
 	 */
 
-	'interactions:attachments:labelled' => 'Adjuntoss: ',
+	'interactions:attachments:labelled' => 'Adjuntos: ',
 
 	'interactions:reply:email:subject' => '%s respondió a %s',
 
@@ -2128,6 +2128,14 @@ o ver el perfil de %s aquí:
 
 	'poll:add'		 => "Añadir nueva encuesta",
 
+	'poll:none'		 => "No se han encontrado encuestas",
+
+	'poll:owner:title' => "Encuestas de %s",
+
+	'poll:friends:title' => "Encuestas de amigos",
+
+
+
 
 
 	//notificaciones
@@ -2170,7 +2178,19 @@ o ver el perfil de %s aquí:
 
 	'sort:group:filter:label' => "Mostrar",
 
-	'sort:group:filter:' => "Todo",
+	'sort:group:filter:open' => "Pertenencia abierta",  //revisar
+
+	'sort:group:filter:closed' => "Pertenencia cerrada",
+
+	'sort:group:filter:featured' => "Destacado",
+
+	'sort:group:filter:member' => "Mis grupos",
+
+	'sort:group:filter:admin' => "Grupos que administro",
+
+	'sort:group:filter:invited' => "Invitaciones",
+
+	'sort:group:filter:membership_request' => "Peticiones pendientes",
 
     'sort:group:search:label' 	=> "Búsqueda",
 
@@ -2184,9 +2204,15 @@ o ver el perfil de %s aquí:
 
 	'inbox:search' => "Búsqueda",
 
+	'inbox:to' => "A",
+
+	'inbox:byline' => "De",
+
 	'item:object:message:__private:plural' => "Mensajes privados",
 
 	'item:object:message:__private:singular' => "Mensaje privado",
+
+	'attachments:upload' => "Añadir adjuntos",
 
 
 
@@ -2230,6 +2256,11 @@ o ver el perfil de %s aquí:
 
 	'notification:method:notifier' => "Notificador",
 
+	'notifications:users:all' => "Todas las suscripciones",
+
+	'notifications:subscriptions:friends:description' => "A continuación está la colección de amigos. Seleccionar una colección habilitará las notificaciones de los amigos en esa colección.",
+
+
 	//Tools
 
 	'user_friends:usersettings:title' => "Lista de amigos",
@@ -2248,7 +2279,9 @@ o ver el perfil de %s aquí:
 
 	'hypeWall:usersettings:title' => "Muro",
 
-	'wall:usersettings:river_access_id_help' => "¿Quién puede ver que fuiste etiquetado en el muro de otro usuario si el mensaje original no se compartió con ellos?",
+	'wall:usersettings:river_access_id_help' => "¿Quién puede ver que fuiste etiquetado en el muro de otro usuario, si el mensaje original no se compartió con ellos?",
 
 	'wall:usersettings:third_party_wall' => "Permitir que gente que no es tu amiga publique en tu muro"
+
+
 );

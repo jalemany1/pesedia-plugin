@@ -25,8 +25,12 @@ p, body {
 }
 
 /* Tamaño de los iconos de la topbar */
-.elgg-icon {
+.elgg-page-topbar .elgg-icon {
 	font-size: 24px;
+}
+
+.elgg-icon {
+	font-size: 20px;
 }
 
 .elgg-menu-item-inbox > a .elgg-icon {
