@@ -26,7 +26,7 @@ p, body {
 
 /* Tamaño de los iconos de la topbar */
 .elgg-icon {
-	font-size: 20px;
+	font-size: 24px;
 }
 
 .elgg-menu-item-inbox > a .elgg-icon {
