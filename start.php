@@ -329,14 +329,14 @@ function reformat_topbar() {
 		elgg_register_menu_item('topbar', array(
 			'href' => false,
 			'name' => 'search',			
-			'text' => '<i class="fa fa-search fa-lg"></i>'.elgg_view('search/header'),
+			'text' => elgg_view_icon('search').elgg_view('search/header'),
 			'priority' => 0,
 			'section' => 'alt',
 		));
 
 		elgg_register_menu_item('topbar', array(
 			'name' => 'home',
-			'text' => '<i class="fa fa-home fa-lg"></i> ',
+			'text' => elgg_view_icon('home'),
 			'href' => "/",
 			'priority' => 2,
 			'section' => 'alt',
@@ -355,7 +355,7 @@ function reformat_topbar() {
 
 		elgg_register_menu_item('topbar', array(
 			'name' => 'account',
-			'text' => '<i class="fa fa-cog fa-lg"></i> ',
+			'text' => elgg_view_icon('settings-alt'),
 			'href' => "#",
 			'priority' => 300,
 			'section' => 'alt',

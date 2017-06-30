@@ -16,7 +16,8 @@ label.elgg-river-selector,
 li.elgg-more,
 li.elgg-menu-item-feature,
 ul.elgg-breadcrumbs,
-.elgg-menu-item-add-content{
+div.elgg-widget-add-control,
+ul.elgg-menu-wall-tools .elgg-menu-item-add-content{
 	display: none;
 }
 
@@ -26,10 +27,7 @@ ul.elgg-breadcrumbs,
     margin-bottom: 15px;
 }
 
-.elgg-list-river > li{
-    margin-bottom: 15px;
-}
-
+.profile .elgg-inner,
 .elgg-input-dropzone.wall-photo{
 	background-color: white;
 }
@@ -50,21 +48,21 @@ ul.elgg-breadcrumbs,
 	margin-right: 1%;
 }
 
-/*.profile-wall > .wall-container{
-	margin-top: 0px;
-}*/
 .profile-wall > .elgg-main,
 .profile-wall .elgg-heading-main{
 	padding-top: 0px;
 }
 
-.profile .elgg-inner {
+li.elgg-item-user,
+li.elgg-item-group,
+li.elgg-item-object-poll,
+li.elgg-item-object-leader,
+li.elgg-item-object-gm_score_history{
+	padding: 0px 15px;
+	border: 1px solid #dcdcdc;
 	background-color: white;
 }
 
-.elgg-widget-add-control {
-	display: none;
-}
 
 /* ***************************************
 	TOPBAR MENU DROPDOWN

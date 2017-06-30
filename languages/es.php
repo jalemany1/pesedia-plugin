@@ -2246,7 +2246,7 @@ o ver el perfil de %s aquí:
 
 	'user:friends:visibility:public' => "Toda la red",
 
-	'hypeWall:usersettings:title' => "Muro"
+	'hypeWall:usersettings:title' => "Muro",
 
 	'wall:usersettings:river_access_id_help' => "¿Quién puede ver que fuiste etiquetado en el muro de otro usuario si el mensaje original no se compartió con ellos?",
 

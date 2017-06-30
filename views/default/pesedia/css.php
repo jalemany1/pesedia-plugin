@@ -6,7 +6,7 @@ El mecanismo de asignación del CSS está tomado del plugin galliElggCSS
 Los estilos tomados del plugin tema Hexagon
 */
 ?> 
-
+/*<style>
 p, body {
 	font-family: "Trebuchet MS",Arial,Tahoma,Verdana,sans-serif;
 	font-size: 13px;
@@ -26,10 +26,15 @@ p, body {
 
 /* Tamaño de los iconos de la topbar */
 .elgg-icon {
-	color: #CCC;
-	font-size: 24px;
-	line-height: 1em;
-	margin: 0 2px;
+	font-size: 20px;
+}
+
+.elgg-menu-item-inbox > a .elgg-icon {
+    /* font-size: 20px; */
+}
+
+.elgg-menu-topbar > li > a.elgg-topbar-avatar {
+	padding-top: 2.5px;
 }
 
 
