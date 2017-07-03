@@ -84,7 +84,7 @@ li.elgg-item-object-gm_score_history{
 	margin: 0 15px 0 0;
 }
 
-.elgg-page-topbar i.fa-search{
+.elgg-page-topbar span.fa-search{
     float: left;
     margin: 2.5px 5px;
     color: #EEE;
