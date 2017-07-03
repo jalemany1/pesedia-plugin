@@ -117,7 +117,8 @@ function profile_pagesetup_tiny() {
 
 
 function registrationcode_register_hook() {
-	if (get_input('custom_profile_fields_registrationcode') != hash('crc32', get_input('custom_profile_fields_DNIoNIA'), false) ) {
+	$resumen = get_input('custom_profile_fields_clase') . get_input('custom_profile_fields_grupo') . get_input('custom_profile_fields_id');
+	if (get_input('custom_profile_fields_registrationcode') != hash('crc32', $resumen , false) ) {
 		register_error(elgg_echo('pesedia:invitationcode'));
 		forward(REFERER);
 	}
