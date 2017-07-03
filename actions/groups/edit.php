@@ -130,7 +130,9 @@ if (!$is_new_group && $new_owner_guid && $new_owner_guid != $old_owner_guid) {
 
 if ($is_new_group) {
 	// if new group, we need to save so group acl gets set in event handler
-	if (!$group->save()) {
+	$ac_name = elgg_echo('groups:group') . ": " . $group->name;
+	$group->group_acl = create_access_collection($ac_name, $group->guid);
+	if (!$group->group_acl) {
 		register_error(elgg_echo("groups:save_error"));
 		forward(REFERER);
 	}

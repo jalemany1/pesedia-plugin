@@ -11,7 +11,7 @@ Los estilos tomados del plugin tema Hexagon
 /* ***************************************
 	SIMPLIFY STYLE
 *****************************************/
-ul.elgg-menu-filter-ctivity,
+#ul.elgg-menu-filter-ctivity,
 label.elgg-river-selector,
 li.elgg-more,
 li.elgg-menu-item-feature,
@@ -86,7 +86,7 @@ li.elgg-item-object-gm_score_history{
 
 .elgg-page-topbar i.fa-search{
     float: left;
-    margin: 9px 5px;
+    margin: 2.5px 5px;
     color: #EEE;
 }
 

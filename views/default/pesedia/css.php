@@ -25,16 +25,14 @@ p, body {
 }
 
 /* Tamaño de los iconos de la topbar */
+.elgg-menu-item-inbox > a .elgg-icon,
 .elgg-page-topbar .elgg-icon {
+	color: #EEE;
 	font-size: 24px;
 }
 
 .elgg-icon {
 	font-size: 20px;
-}
-
-.elgg-menu-item-inbox > a .elgg-icon {
-    /* font-size: 20px; */
 }
 
 .elgg-menu-topbar > li > a.elgg-topbar-avatar {
