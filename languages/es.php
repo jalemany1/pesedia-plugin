@@ -1926,409 +1926,72 @@ Ver y responder en el debate:
 
 
 	'mechanics:create:object:hjeducation' => 'Añadir experiencia educativa',
-
-
-
 	'mechanics:update:object:hjeducation' => 'Actualizar experiencia educativa',
-
-
-
 	'mechanics:delete:object:hjeducation' => 'Borrar experiencia educativa',
-
-
-
-	
-
-
-
 	'mechanics:create:object:hjexperience' => 'Añadir experiencia laboral',
-
-
-
 	'mechanics:update:object:hjexperience' => 'Actualizar experiencia laboral',
-
-
-
 	'mechanics:delete:object:hjexperience' => 'Borrar experiencia laboral',
-
-
-
-	
-
-
-
 	'mechanics:create:object:hjlanguage' => 'Añadir lenguaje',
-
-
-
 	'mechanics:update:object:hjlanguage' => 'Actualizar lenguaje',
-
-
-
 	'mechanics:delete:object:hjlanguage' => 'Borrar lenguaje',
-
-
-
-	
-
-
-
 	'mechanics:create:object:hjportfoliofile' => 'Añadir archivo al portfolio',
-
-
-
 	'mechanics:update:object:hjportfoliofile' => 'Editar archivo en portfolio',
-
-
-
 	'mechanics:delete:object:hjportfoliofile' => 'Borrar archivo del portfolio',
-
-
-
-
-
-
-
 	'mechanics:create:object:hjskill' => 'Añadir destreza',
-
-
-
 	'mechanics:update:object:hjskill' => 'Editar destreza',
-
-
-
 	'mechanics:delete:object:hjskill' => 'Borrar destreza',
-
-
-
-
-
-
-
 	'mechanics:create:object:favorite_track' => 'Importar canción favorita desde SoundCloud',
-
-
-
 	'mechanics:update:object:favorite_track' => 'Actualizar canción favorita',
-
-
-
 	'mechanics:delete:object:favorite_track' => 'Borrar canción favorita',
-
-
-
-
-
-
-
 	'mechanics:create:object:playlist' => 'Importar playlist desde SoundCloud',
-
-
-
 	'mechanics:update:object:playlist' => 'Actualizar playlist',
-
-
-
 	'mechanics:delete:object:playlist' => 'Borrar playlist',
-
-
-
-
-
-
-
 	'mechanics:create:object:track' => 'Importar canción desde SoundCloud',
-
-
-
 	'mechanics:update:object:track' => 'Actualizar canción',
-
-
-
 	'mechanics:delete:object:track' => 'Borrar canción',
-
-
-
-
-
-
-
 	'mechanics:update:annotation:comment' => 'Actualizar comentario',
-
-
-
 	'mechanics:delete:annotation:comment' => 'Borrar comentario',
-
-
-
-
-
-
-
-
-
-
-
 	'mechanics:update:annotation:group_topic_post' => 'Editar entrada del grupo del foro',
-
-
-
 	'mechanics:delete:annotation:group_topic_post' => 'Eliminar entrada del grupo del foro',
-
-
-
-
-
-
-
-
-
-
-
 	'mechanics:update:annotation:likes' => 'Editar Me gusta',
-
-
-
 	'mechanics:delete:annotation:likes' => 'Quitar Me gusta',
-
-
-
-
-
-
-
 	'mechanics:create:annotation:likes:reverse' => 'Me gusta en tu post',
-
-
-
-
-
-
-
-	'mechanics:create:annotation:starrating' => 'Crear contribución',
-
-
-
 	'mechanics:update:annotation:starrating' => 'Editar contribución',
-
-
-
 	'mechanics:delete:annotation:starrating' => 'Eliminar contribucción',
-
-
-
-
-
-
-
 	'mechanics:create:annotation:starrating:reverse' => 'Recibir una contribución en tu ítem',
-
-
-
-
-
-
-
 	'mechanics:delete:relationship:friend' => 'Eliminar amigo',
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	'mechanics:update:group:default' => 'Actualizar grupo',
-
-
-
 	'mechanics:delete:group:default' => 'Eliminar grupo',
-
-
-
-
-
-
-
+	'mechanics:delete:group:default:desc' => 'Cada vez que borres un grupo, recibirás 1 punto, hasta un máximo de 1 punto.',
 	'mechanics:leave:group:user' => 'Dejar grupo',
-
-
-
-
-
-
-
 	'mechanics:create:object:hjannotation:generic_comment' => 'Añadir comentario',
-
-
-
 	'mechanics:update:object:hjannotation:generic_comment' => 'Editar comentario',
-
-
-
 	'mechanics:delete:object:hjannotation:generic_comment' => 'Eliminar comentario',
-
-
-
-
-
-
-
 	'mechanics:create:object:hjannotation:generic_comment:reverse' => 'Recibir comentario',
-
-
-
-
-
-
-
 	'mechanics:create:object:hjannotation:likes' => 'Nuevo Me gusta',
-
-
-
 	'mechanics:update:object:hjannotation:likes' => 'Editar Me gusta',
-
-
-
 	'mechanics:delete:object:hjannotation:likes' => 'Quitar Me gusta',
-
-
-
-
-
-
-
 	'mechanics:create:object:hjannotation:likes:reverse' => 'Me gusta en tu post',
-
-
-
-
-
-
-
 	'mechanics:create:object:hjannotation:group_topic_post' => 'Contestar group forum topic',
-
-
-
 	'mechanics:update:object:hjannotation:group_topic_post' => 'Actualizar group forum topic',
-
-
-
 	'mechanics:delete:object:hjannotation:group_topic_post' => 'Borrar contestación a group forum topic',
-
-
-
-
-
-
-
 	'mechanics:create:object:hjannotation:hjforumpost:reverse' => 'Recibir respuesta a tema del foro',
-
-
-
-
-
-
-
 	'mechanics:create:object:hjannotation:hjforumpost' => 'Añadir contestación a tema del foro',
-
-
-
 	'mechanics:update:object:hjannotation:hjforumpost' => 'Editar entrada del tema en foro',
-
-
-
 	'mechanics:delete:object:hjannotation:hjforumpost' => 'Borrar entrada del tema en foro',
-
-
-
-
-
-
-
 	'mechanics:delete:object:hjannotation:hjforumpost:reverse' => 'Recibir contestación a tu tema del foro',
-
-
-
-
-
-
-
 	'mechanics:allownegativetotal' => 'Permitir saldo total puntos negativo (el usuario podrá ejecutar acción y la puntuación total se volverá negativa)',
-
-
-
 	'mechanics:forbidnegativetotal' => 'No permitir saldo total puntos negativo (usuario no puede ejecutar la acción si esta provoca un saldo en negativo)',
-
-
-
-
-
-
-
 	'mechanics:negativereached' => 'Con esta acción tendrías un saldo total puntos en negativo. Debes conseguir más puntos',	
-
-
-
-
-
-
-
 	'river:create:object:hjbadge' => '%s ha creado un nuevo logro %s',
-
-
-
 	'river:claim:object:hjbadge' => '%s ha sido premiado con un nuevo logro | %s',
-
-
-
-
-
-
-
 	'mechanics:badges:site' => 'Logros pendientes',
-
-
-
 	'mechanics:badges:add' => 'Añadir nuevo logro',
-
-
-
 	'mechanics:badges:edit' => 'Editar %s',
-
-
-
-
-
-
-
 	'label:hjbadge:icon' => 'Imagen del logro',
-
-
-
 	'label:hjbadge:title' => 'Nombre',
-
-
-
 	'label:hjbadge:description' => 'Descripción',
-
-
-
 	'label:hjbadge:badge_type' => 'Tipo de logro',
-
-
-
-
-
-
-
 	'mechanics:badges:new' => 'Nuevos logros',
 
 
@@ -2930,467 +2593,105 @@ Ver y responder en el debate:
 
 
 	'mechanics:publish:object:hjwall:everybody:desc' => 'Cada vez que publiques una entrada y en el selector de audiencia escojas "Toda la red" conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
 	'mechanics:publish:object:hjwall:friends' => 'Publicar una entrada con visibilidad "Amigos"',
-
-
-
 	'mechanics:publish:object:hjwall:friends:desc' => 'Cada vez que publiques una entrada y en el selector de audiencia escojas "Amigos" conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
 	'mechanics:publish:object:hjwall:collection' => 'Publicar una entrada con visibilidad para una colección de amigos',
-
-
-
 	'mechanics:publish:object:hjwall:collection:desc' => 'Cada vez que publiques algo en tu muro y en el selector de audiencia escojas una de tus colecciones de amigos conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-		
-
-
-
 	'mechanics:join:group:user:reverse' => 'Alguien se une a alguno de mis grupos ',
-
-
-
     'mechanics:join:group:user:reverse:desc' => 'Cada vez alguien se una a alguno de tus grupos conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
 	'mechanics:create:object:photo' => 'Añadir una foto en alguno de tus álbumes',
-
-
-
 	'mechanics:create:object:photo:desc' => 'Cada vez que subas una foto a alguno de tus álbumes conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
 	'mechanics:create:object:group:photo' => 'Añadir una foto en uno de los grupos de tu propiedad',
-
-
-
 	'mechanics:create:object:group:photo:desc' => 'Cada vez que subas una foto a algún álbum de un grupo, siendo tú el propietario de ese grupo, conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
 	'mechanics:create:object:group:photo:notgroupowner' => 'Añadir una foto en un grupo que no es de tu propiedad',
-
-
-
 	'mechanics:create:object:group:photo:notgroupowner:desc' => 'Cada vez que subas una foto a algún álbum de un grupo que no sea de tu propiedad conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
 	'mechanics:create:object:group:photo:reverse' => 'Alguien añade una foto en alguno de mis grupos',
-
-
-
 	'mechanics:create:object:group:photo:reverse:desc' => 'Cada vez que alguien suba una foto a un álbum de alguno de tus grupos conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-
-
-
-
 	'mechanics:create:object:album:private' => 'Hacer que la visibilidad de un álbum sea "Privado"',
-
-
-
 	'mechanics:create:object:album:private:desc' => 'Cada vez que hagas que la visibilidad de un álbum sea "Privado" conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-		
-
-
-
 	'mechanics:create:object:album:friends' => 'Hacer que la visibilidad de un álbum sea "Amigos"',
-
-
-
 	'mechanics:create:object:album:friends:desc' => 'Cada vez que hagas que la visibilidad de un álbum sea "Amigos" conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-		
-
-
-
 	'mechanics:create:object:album:everybody' => 'Hacer que la visibilidad de un álbum sea "Toda la red"',
-
-
-
 	'mechanics:create:object:album:everybody:desc' => 'Cada vez que hagas que la visibilidad de un álbum sea "Toda la red" conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-		
-
-
-
 	'mechanics:create:object:album:collection' => 'Hacer que la visibilidad de un álbum sea una colección de amigos o un grupo',
-
-
-
 	'mechanics:create:object:album:collection:desc' => 'Cada vez que hagas que la visibilidad de un álbum sea una colección de amigos o un grupo conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-		
-
-
-
-		
-
-
-
-		
-
-
-
 	'mechanics:create:annotation:comment:group' => 'Añadir un comentario en el muro de un grupo',
-
-
-
 	'mechanics:create:annotation:comment:group:desc' => 'Cada vez que comentes algo en el muro de un grupo conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
 	'mechanics:create:annotation:comment:group:reverse' => 'Alguien añade un comentario en alguno de mis grupos',
-
-
-
 	'mechanics:create:annotation:comment:group:reverse:desc' => 'Cada vez que alguien comente algo en el muro de alguno de tus grupos conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-
-
-
-
 	'mechanics:create:object:groupforumtopic' => 'Añadir un tema de discusión en un grupo',
-
-
-
 	'mechanics:create:object:groupforumtopic:desc' => 'Cada vez crees un tema de discusión en un grupo conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-
-
-
-
 	'mechanics:create:group:default' => 'Crear un grupo',
-
-
-
 	'mechanics:create:group:default:desc' => 'Cada vez que crees un grupo conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-		
-
-
-
 	'mechanics:create:annotation:comment' => 'Añadir un comentario',
-
-
-
 	'mechanics:create:annotation:comment:desc' => 'Cada vez que comentes algo conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-		
-
-
-
 	'mechanics:create:annotation:comment:reverse' => 'Recibir un comentario',
-
-
-
 	'mechanics:create:annotation:comment:reverse:desc' => 'Cada vez alguien comente algo que hayas publicado conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-
-
-
-
 	'mechanics:create:annotation:group_topic_post' => 'Responder a un tema de discusión',
-
-
-
 	'mechanics:create:annotation:group_topic_post:desc' => 'Cada vez que respondas a un tema de discusión de un grupo conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-
-
-
-
 	'mechanics:create:annotation:group_topic_post:reverse' => 'Recibir respuesta a tu tema de discusión',
-
-
-
 	'mechanics:create:annotation:group_topic_post:reverse:desc' => 'Cada vez que recibas una respuesta a uno de tus temas de discusión conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-	
-
-
-
 	'mechanics:create:annotation:likes' => 'Añadir Me gusta',
-
-
-
 	'mechanics:create:annotation:likes:desc' => 'Cada vez que indiques que algo te gusta conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-
-
-
-
-		
-
-
-
 	'mechanics:create:annotation:likes:reverse' => 'Recibir un Me gusta',
-
-
-
 	'mechanics:create:annotation:likes:reverse:desc' => 'Cada vez que recibas un me gusta conseguirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-
-
-
-
 	'mechanics:login:user:default' => 'Iniciar sesión',
-
-
-
 	'mechanics:login:user:default:desc' => 'Cada vez que inicies sesión recibirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-
-
-
-
 	'mechanics:profileupdate:user:everybody' => 'Actualizar algún campo de perfil con acceso Toda la red',
-
-
-
 	'mechanics:profileupdate:user:everybody:desc' => 'Cada vez que actualices tu perfil, y el acceso a alguno de los campos sea Toda la red, te recibirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-		
-
-
-
 	'mechanics:profileupdate:user:private' => 'Actualizar algún campo de perfil con acceso Privado',
-
-
-
 	'mechanics:profileupdate:user:private:desc' => 'Cada vez que actualices tu perfil, y el acceso a alguno de los campos sea Privado, te recibirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-	
-
-
-
 	'mechanics:profileupdate:user:friends' => 'Actualizar algún campo de perfil con acceso Amigos',
-
-
-
 	'mechanics:profileupdate:user:friends:desc' => 'Cada vez que actualices tu perfil, y el acceso a alguno de los campos sea Amigos, te recibirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-	
-
-
-
 	'mechanics:profileupdate:user:collection' => 'Actualizar algún campo de perfil con acceso a una colección de amigos',
-
-
-
 	'mechanics:profileupdate:user:collection:desc' => 'Cada vez que actualices tu perfil, y el acceso a alguno de los campos sea una colección de amigos, te recibirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-	
-
-
-
 	'mechanics:profileiconupdate:user:default' => 'Subir avatar',
-
-
-
 	'mechanics:profileiconupdate:user:default:desc' => 'Cada vez que actualices tu avatar recibirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-	
-
-
-
 	'mechanics:join:group:user' => 'Unirte a un grupo',
-
-
-
 	'mechanics:join:group:user:desc' => 'Cada vez que te unas a un grupo recibirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-	
-
-
-
 	'mechanics:create:relationship:friend' => 'Has hecho un amigo',
-
-
-
 	'mechanics:create:relationship:friend:desc' => 'Cada vez que hagas un amigo recibirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-	
-
-
-
 	'mechanics:create:relationship:friend:reverse' => 'Aceptar una solicitud de amistad',
-
-
-
 	'mechanics:create:relationship:friend:reverse:desc' => 'Cada que vez que aceptes una solicitud de amistad recibirás %d puntos hasta un máximo de %d puntos.',
-
-
-
-	'mechanics:create:relationship:invited'	=> "",
-
-	'mechanics:create:relationship:invited:desc' => "",
-
-	'mechanics:publish:object:hjwall:share' => "",
-
-	'mechanics:publish:object:hjwall:share:desc' => "",
-
-	'mechanics:publish:object:hjwall:location' => "",
-
-	'mechanics:publish:object:hjwall:location:desc' => "",
-
-	'mechanics:publish:object:hjwall:url' => "",
-
-	'mechanics:publish:object:hjwall:location:url' => "",
-
-	'mechanics:create:group:secret' => "",
-
-	'mechanics:create:group:secret:desc' => "",
-
-	'mechanics:create:group:private' => "",
-
-	'mechanics:create:group:private:desc' => "",
-
-	'mechanics:create:group:public' => "",
-
-	'mechanics:create:group:public:desc' => "",
-
-	'mechanics:create:friendscollection' => "",
-
-	'mechanics:create:friendscollection:desc' => "",
-
+	'mechanics:create:relationship:invited'	=> 'Invitación para unirse a grupo',
+	'mechanics:create:relationship:invited:desc' => 'Cada vez que invites a alguien a unirse a un grupo, recibirás 1 punto, hasta un máximo de 10.',
+	'mechanics:publish:object:hjwall:photo' => 'Publicar una foto',
+	'mechanics:publish:object:hjwall:photo:desc' => 'Cada vez que publiques una foto, recibirás 1 punto, hasta un máximo de 1000 puntos.',
+	'mechanics:publish:object:hjwall:share' => 'Compartir una publicación',
+	'mechanics:publish:object:hjwall:share:desc' => 'Cada vez que compartas una publicación, recibirás 1 punto, hasta un máximo de 1000 puntos.',
+	'mechanics:publish:object:hjwall:location' => 'Añadir una localización en alguna de tus publicaciones',
+	'mechanics:publish:object:hjwall:location:desc' => 'Cada vez que añadas una localización a alguna de tus publicaciones, recibirás 1 punto, hasta un máximo de 1000 puntos.',
+	'mechanics:publish:object:hjwall:url' => 'Añadir un enlace en alguna de tus publicaciones',
+	'mechanics:publish:object:hjwall:location:url' => 'Cada vez que añadas un enlace a alguna de tus publicaciones, recibirás 1 punto, hasta un máximo de 1000 puntos.',
+	'mechanics:create:group:secret' => 'Crear un grupo secreto',
+	'mechanics:create:group:secret:desc' => 'Cada vez que crees un grupo secreto, recibirás 1 punto, hasta un máximo de 1 punto.',
+	'mechanics:create:group:private' => 'Crear un grupo privado',
+	'mechanics:create:group:private:desc' => 'Cada vez que crees un grupo privado, recibirás 1 punto, hasta un máximo de 1 punto.',
+	'mechanics:create:group:public' => 'Crear un grupo público',
+	'mechanics:create:group:public:desc' => 'Cada vez que crees un grupo público, recibirás 1 punto, hasta un máximo de 1 punto.',
+	'mechanics:create:friendscollection' => 'Crear una colección de amigos',
+	'mechanics:create:friendscollection:desc' => 'Cada vez que crees una colección de amigos, recibirás 1 punto, hasta un máximo de 10 punto.',
+	'mechanics:create:annotation:starrating' => 'Valorar a los usuarios',
+	'mechanics:create:annotation:starrating:desc' => 'Cada vez que valores a otros usuarios, recibirás un punto, hasta un máximo de 1000 puntos.',
+	
 
 
 	// hypeApps
-
-
-
-
-
-
-
 	'apps:action:error' => 'Ocurrió un error y ha sido registrado. Por favor, contacte al administrador si el error persite',
-
-
-
 	'apps:validation:error' => 'Una o más campos están incompletos o contienen datos mal formados.',
-
-
-
 	'apps:validation:error:prop' => 'El valor para \'%s\' no es válido',
-
-
-
 	'apps:permissions:error' => 'No tiene suficientes permisos para esta acción',
-
-
-
 	'apps:entity:error' => 'La entidad no existe o no tienes permisos para acceder',
-
-
-
-
-
-
-
 	'apps:delete:success' => '%s ha sido borrado',
-
-
-
 	'apps:delete:error' => '%s no puede borrarse',
-
-
-
-
-
-
-
 	'apps:item' => 'elemento',
 
 
-
-
-
-
-
 	// hypeFaker
-
-
-
-
-
-
-
 	'admin:developers:faker' => 'Generar Datos de Demostración',
-
-
-
-
-
-
-
 	'faker:data' => 'Generar elementos de demostración',
-
-
-
 	'faker:delete' => 'Eliminar elementos de demostración',
-
-
-
 	'faker:delete:success' => 'Los datos de demostración se han borrado correctamente',
-
-
-
 	'faker:delete:error' => 'Se abandonaron %s elementos ...',
 
 
@@ -4478,35 +3779,16 @@ o ver el perfil de %s aquí:
 
 
 	//user rating
-
-
-
 	'stars:rate' => 'Valoración',
-
-
-
     'stars:saving' => 'Guardando valoración...',
-
-
-
     'stars:rate:error' => 'Error al guardar tu valoración',
-
-
-
     'stars:rate:success' => 'Valoración guardada',
-
-
-
-    'stars:rate:alreadyrated' => 'No puede volver a valorar al usuario',
-
-
-
+    'stars:rate:alreadyrated' => 'No puedes volver a valorar al usuario',
+    'rating_name:rate' => 'Valorar',
 	'rating_name:starrating' => "Valora tu relación con %s",
-
-
+	'rating_name:starrating:help' => 'Esta valoración es secreta',
 
 	//Cabecera
-
 	'notifier:unreadcount' => "Notificaciones no leídas",
 
 
