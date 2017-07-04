@@ -68,9 +68,10 @@ function pesedia_init() {
 	/* Rate friends */
 	//  - Register action
 	elgg_register_action('stars/rate', __DIR__ . '/actions/stars/rate.php');
+	//  - Register menu action
+	//elgg_register_plugin_hook_handler('register', 'menu:user_hover', 'add_rate_menu');
 	// 	- Stars JS and CSS
 	elgg_define_js('jquery.rateit', array(
-		//'src' => '/mod/elgg_stars/vendors/rateit/jquery.rateit.min.js',
 		'src' => 'mod/pesedia-plugin/vendors/rateit/jquery.rateit.min.js',
 		'deps' => array('jquery'),
 	));
