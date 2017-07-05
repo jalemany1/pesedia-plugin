@@ -2673,7 +2673,8 @@ Ver y responder en el debate:
 	'mechanics:create:friendscollection:desc' => 'Cada vez que crees una colección de amigos, recibirás 1 punto, hasta un máximo de 10 punto.',
 	'mechanics:create:annotation:starrating' => 'Valorar a los usuarios',
 	'mechanics:create:annotation:starrating:desc' => 'Cada vez que valores a otros usuarios, recibirás un punto, hasta un máximo de 1000 puntos.',
-	
+	'mechanics:publish:object:hjwall:friend_tags' => 'Etiquetar amigos en una publicación',
+	'mechanics:publish:object:hjwall:friend_tags:desc' => 'Cada vez que etiquetes a otros usuarios en tu publicación, recibirás un punto, hasta un máximo de 1000 puntos.',
 
 
 	// hypeApps
@@ -3873,7 +3874,7 @@ o ver el perfil de %s aquí:
 
 
 
-	'wall:usersettings:third_party_wall' => "Permitir que gente que no es tu amiga publique en tu muro"
+	'wall:usersettings:third_party_wall' => "Permitir que gente que no es tu amiga publique en tu muro",
 
 
 
