@@ -128,7 +128,7 @@ if (!$is_new_group && $new_owner_guid && $new_owner_guid != $old_owner_guid) {
 	}
 }
 
-if ($is_new_group) {
+/*if ($is_new_group) {
 	// if new group, we need to save so group acl gets set in event handler
 	$ac_name = elgg_echo('groups:group') . ": " . $group->name;
 	$group->group_acl = create_access_collection($ac_name, $group->guid);
@@ -136,7 +136,7 @@ if ($is_new_group) {
 		register_error(elgg_echo("groups:save_error"));
 		forward(REFERER);
 	}
-}
+}*/
 
 //Group policy
 $policy = (int) get_input('policy', 0);
@@ -148,7 +148,7 @@ switch($policy){
 		$group->membership = ACCESS_PRIVATE;
 
 		//Visibility
-		$group->access_id = $group->access_id;
+		$group->access_id = 3;
 
 		//GroupContent Accessibility
 		$group->setContentAccessMode((string)ElggGroup::CONTENT_ACCESS_MODE_MEMBERS_ONLY);
