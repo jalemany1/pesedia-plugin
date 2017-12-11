@@ -12,18 +12,6 @@ function pesedia_init() {
 	// Eliminamos el enlace al canal RSS
 	elgg_unregister_plugin_hook_handler('output:before', 'layout', 'elgg_views_add_rss_link');
 
-	// Eliminamos los widgets en el perfil del grupo
-	elgg_register_plugin_hook_handler('view', 'groups/profile/widgets', 'myplugin_alter_groups_profile_widgets');
-
-	// Cambiamos el tamaño del avatar que aparece en la topbar
-	elgg_register_event_handler('pagesetup', 'system', 'profile_pagesetup_tiny', 60);
-
-	// Cambios de estilo para dar el "look" Pesedia
-	elgg_extend_view('css/elgg', 'pesedia/css', 1000);
-
-	/* Simplificar vista River ocultando elementos */
-	elgg_extend_view('css/elgg', 'pesedia/simplifier.css', 1000);
-
 	/* Para eliminar el menú contextual que aparece al mover el ratón sobre el avatar de un usaurio
 	 he modificado el fichero /pesediaDemo/public_html/vendor/elgg/elgg/js/lib/ui.js a partir de la línea 187
 	 Pendiente encontrar un método menos intrusivo.
@@ -32,24 +20,12 @@ function pesedia_init() {
 	// Exigir el código de registro 
 	elgg_register_plugin_hook_handler('action', 'register', 'registrationcode_register_hook');
 
-	/* Cambia el icono de las notificaciones. */
-	elgg_unregister_plugin_hook_handler('register', 'menu:topbar', 'notifier_topbar_menu_setup');
-	elgg_register_plugin_hook_handler('register', 'menu:topbar', 'notifier_topbar_menu_setup_pesedia');
-
 	/* Improve content reporting */
 	// Remove ReportContent icon from right-space (extras) options
 	elgg_unregister_menu_item('extras', 'report_this');
 	// Add ReportContent option for each ElggEntity
 	elgg_register_plugin_hook_handler('register', 'menu:river', 'add_reportcontent_option');
 	elgg_register_plugin_hook_handler('register', 'menu:entity', 'add_reportcontent_option');
-
-	/* Repair hashtags for your later social network search */
-	// Delete the # symbol
-	elgg_register_plugin_hook_handler('extract:qualifiers', 'all', 'standardize_hashtag_format');
-
-	/* Accept-Revoke-Reject actions limited to Request View*/
-	// Delete menu actions
-	elgg_register_plugin_hook_handler('register', 'menu:friendship', 'enable_actions_only_in_requestview', 999);
 	
 	/* Repair ClosedMembership-Group access invitation */
 	// Add access grant
@@ -64,43 +40,7 @@ function pesedia_init() {
 	elgg_unregister_action('groups/edit');
 	elgg_register_action('groups/edit', __DIR__ . '/actions/groups/edit.php');
 	elgg_register_css('policies', elgg_get_simplecache_url('policies.css'));
-
-	/* Improve topbar and include search in it */
-	elgg_register_event_handler('pagesetup', 'system', 'reformat_topbar', 1000);
 }
-
-
-
-function myplugin_alter_groups_profile_widgets($hook, $type, $returnvalue, $params) {
-	if ($params['viewtype'] !== 'default') {
-		return $returnvalue;
-	}
-
-	return '';
-}
-
-// Cambia el avatar de la topbar a tamaño tiny. Basada en la función profile_pagesetup de "vendor/elgg/elgg/mod/profile/start.php"
-function profile_pagesetup_tiny() {
-	$viewer = elgg_get_logged_in_user_entity();
-	if (!$viewer) {
-		return;
-	}
-	
-	elgg_register_menu_item('topbar', array(
-		'name' => 'profile',
-		'href' => $viewer->getURL(),
-		'text' => elgg_view('output/img', array(
-			'src' => $viewer->getIconURL('tiny'), // AGUS aumenta el tamaño del avatar de la topbar
-			'alt' => $viewer->name,
-			'title' => elgg_echo('profile'),
-			'class' => 'elgg-border-plain elgg-transition',
-		)),
-		'priority' => 100,
-		'link_class' => 'elgg-topbar-avatar',
-		'item_class' => 'elgg-avatar elgg-avatar-topbar',
-	));
-}
-
 
 function registrationcode_register_hook() {
 	$resumen = get_input('custom_profile_fields_clase') . get_input('custom_profile_fields_grupo') . get_input('custom_profile_fields_id');
@@ -110,44 +50,6 @@ function registrationcode_register_hook() {
 	}
 	set_input('custom_profile_fields_registrationcode','');
 }
-
-/* Reemplaza a notifier_topbar_menu_setup de mod/notifier/start.php */
-function notifier_topbar_menu_setup_pesedia ($hook, $type, $return, $params) {
-	if (elgg_is_logged_in()) {
-		// Get amount of unread notifications
-		$count = (int)notifier_count_unread();
-
-		$text = elgg_view_icon('bell'); // Este es el cambio 
-		$tooltip = elgg_echo("notifier:unreadcount", array($count));
-
-		if ($count > 0) {
-			if ($count > 99) {
-				// Don't allow the counter to grow endlessly
-				$count = '99+';
-			}
-			$hidden = '';
-		} else {
-			$hidden = 'class="hidden"';
-		}
-
-		$text .= "<span id=\"notifier-new\" $hidden>$count</span>";
-
-		$item = ElggMenuItem::factory(array(
-				'name' => 'notifier',
-				'href' => '#notifier-popup',
-				'text' => $text,
-				'priority' => 600,
-				'title' => $tooltip,
-				'rel' => 'popup',
-				'id' => 'notifier-popup-link'
-		));
-
-		$return[] = $item;
-	}
-
-	return $return;
-}
-
 
 /**
  * Add ReportContent option for each Elgg RiverItem or Entity
@@ -184,41 +86,6 @@ function add_reportcontent_option($hook, $type, $return, $params) {
 		'deps' => 'elgg/reportedcontent',
 	]);
 
-	return $return;
-}
-
-
-/**
- * Unify hashtags format to Elgg format
- *
- * @param string 	$hook 		'extract:qualifiers'
- * @param string 	$type 		'all'
- * @param array 	$return 	Scraped content + hashtags formatted
- * @param array 	$params 	Hook params
- * @return ElggMenuItem[]
- */
-function standardize_hashtag_format($hook, $type, $return, $params) {
-	foreach ($return['hashtags'] as &$htag) {
-		$htag = substr($htag, 1);
-	}
-	return $return;
-}
-
-
-/**
- * When 'user_friends' plugin is enabled, this function filters the
- * actions to enable them only in Request View
- *
- * @param string 	$hook 		'register'
- * @param string 	$type 		'menu:friendship'
- * @param array 	$return 	...
- * @param array 	$params 	Hook params
- * @return ElggMenuItem[]
- */
-function enable_actions_only_in_requestview($hook, $type, $return, $params) {
-	$pattern = '/friends\/.*\/requests/';
-	if(!preg_match($pattern, $params['base_url']))
-		return array();
 	return $return;
 }
 
@@ -289,85 +156,4 @@ function menus_access_river_menu_setup($hook, $type, $return, $params) {
 
 	$return[] = $item_menu;
 	return $return;
-}
-
-/**
- * Rearrange menu items
- */
-function reformat_topbar() {
-
-	elgg_unextend_view('page/elements/sidebar', 'search/header');
-	
-	if (elgg_is_logged_in()) {
-
-		$user = elgg_get_logged_in_user_entity();
-		/*$item = elgg_get_menu_item('topbar', 'profile');
-		if ($item) {
-			$icon = elgg_view('output/img', array(
-				'src' => $user->getIconURL('topbar'),
-				'alt' => $user->name,
-				'title' => $user->name,
-				'class' => 'elgg-border-plain elgg-transition',
-			));
-			$text = '<span class="profile-text">'.elgg_get_excerpt($user->name, 20).'</span>';
-			$item->setText($icon . $text);
-		}*/
-
-		elgg_register_menu_item('topbar', array(
-			'href' => false,
-			'name' => 'search',			
-			'text' => elgg_view_icon('search').elgg_view('search/header'),
-			'priority' => 0,
-			'section' => 'alt',
-		));
-
-		elgg_register_menu_item('topbar', array(
-			'name' => 'home',
-			'text' => elgg_view_icon('home'),
-			'href' => "/",
-			'priority' => 2,
-			'section' => 'alt',
-		));
-
-		/*$item = elgg_get_menu_item('topbar', 'friends');
-		if ($item) {
-			$item->setSection('alt');
-		}
-
-		$item = elgg_get_menu_item('topbar', 'messages');
-		if ($item) {
-			$item->setHref("messages/inbox/{$user->name}");
-			$item->setSection('alt');
-		}*/
-
-		elgg_register_menu_item('topbar', array(
-			'name' => 'account',
-			'text' => elgg_view_icon('settings-alt'),
-			'href' => "#",
-			'priority' => 300,
-			'section' => 'alt',
-			'link_class' => 'elgg-topbar-dropdown',
-		));
-		
-		$item = elgg_get_menu_item('topbar', 'usersettings');
-		if ($item) {
-			$item->setParentName('account');
-			$item->setText(elgg_echo('settings'));
-			$item->setPriority(103);
-		}
-
-		$item = elgg_get_menu_item('topbar', 'logout');
-		if ($item) {
-			$item->setParentName('account');
-			$item->setText(elgg_echo('logout'));
-			$item->setPriority(104);
-		}
-
-		$item = elgg_get_menu_item('topbar', 'administration');
-		if ($item) {
-			$item->setParentName('account');
-			$item->setText(elgg_echo('admin'));
-			$item->setPriority(101);
-		}
-	}
 }
