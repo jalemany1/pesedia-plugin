@@ -40,6 +40,9 @@ function pesedia_init() {
 	elgg_unregister_action('groups/edit');
 	elgg_register_action('groups/edit', __DIR__ . '/actions/groups/edit.php');
 	elgg_register_css('policies', elgg_get_simplecache_url('policies.css'));
+
+	/* Limit the amount of RiverItems in Pesedia Home page to 5 */
+	elgg_register_plugin_hook_handler('route', 'activity', function() { set_input('limit', 5); } );
 }
 
 function registrationcode_register_hook() {
