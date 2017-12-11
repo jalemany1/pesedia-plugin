@@ -17,9 +17,6 @@ function pesedia_init() {
 	 Pendiente encontrar un método menos intrusivo.
 	*/
 
-	// Exigir el código de registro 
-	elgg_register_plugin_hook_handler('action', 'register', 'registrationcode_register_hook');
-
 	/* Improve content reporting */
 	// Remove ReportContent icon from right-space (extras) options
 	elgg_unregister_menu_item('extras', 'report_this');
@@ -45,14 +42,6 @@ function pesedia_init() {
 	elgg_register_plugin_hook_handler('route', 'activity', function() { set_input('limit', 5); } );
 }
 
-function registrationcode_register_hook() {
-	$resumen = get_input('custom_profile_fields_clase') . get_input('custom_profile_fields_grupo') . get_input('custom_profile_fields_id');
-	if (get_input('custom_profile_fields_registrationcode') != hash('crc32', $resumen , false) ) {
-		register_error(elgg_echo('pesedia:invitationcode'));
-		forward(REFERER);
-	}
-	set_input('custom_profile_fields_registrationcode','');
-}
 
 /**
  * Add ReportContent option for each Elgg RiverItem or Entity
