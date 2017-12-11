@@ -148,7 +148,7 @@ switch($policy){
 		$group->membership = ACCESS_PRIVATE;
 
 		//Visibility
-		$group->access_id = 3;
+		$group->access_id = ($group->access_id > 2) ? $group->access_id : 3;
 
 		//GroupContent Accessibility
 		$group->setContentAccessMode((string)ElggGroup::CONTENT_ACCESS_MODE_MEMBERS_ONLY);
