@@ -124,7 +124,7 @@ return array(
 	',
 	'groups:invite:user:subject' => '%s te invita a unirte a %s',
 	'groups:invite:user:body' => 'Hola %s,
-	%s te invitó a unirte a '%s'. Pulsa debajo para confirmar la invitación:
+	%s te invitó a unirte a %s. Pulsa debajo para confirmar la invitación:
 	%s',
 	'groups:invite:result:invited' => '%s de %s invitaciones se enviaron correctamente',
 	'groups:invite:result:skipped' => '%s de %s invitationes se pasaron por alto, porque los usuarios ya habían sido invitados',
