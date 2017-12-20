@@ -1,16 +1,27 @@
 <?php
 
-// Ajustes para ajustar el comportamiento de Elgg para Pesedia
+/**
+ * Pesedia-plugin
+ *	- Generic plugin to solve small issues and to test ideas
+ *
+ * @author Jose Alemany Bordera <jalemany1@dsic.upv.es>
+ * @author Agustín Espinosa Minguet <aespinos@upvnet.upv.es>
+ * @copyright Copyright (c) 2017, GTI-IA
+ */
 
 elgg_register_event_handler('init', 'system', 'pesedia_init');
 
-/**
- * Init plugin.
- */
 function pesedia_init() {
 
 	// Eliminamos el enlace al canal RSS
 	elgg_unregister_plugin_hook_handler('output:before', 'layout', 'elgg_views_add_rss_link');
+
+	// Elimina el menú de incrustado en areas de texto si el usuario no es administrador.
+	// De esta forma solo los administradores pueden incrustar elementos pero se mantiene
+	// que el resto de usuarios vean lo incrustado
+	if (!elgg_is_admin_logged_in()) {
+		elgg_unregister_plugin_hook_handler('register', 'menu:longtext', 'embed_longtext_menu');
+	}
 
 	/* Para eliminar el menú contextual que aparece al mover el ratón sobre el avatar de un usaurio
 	 he modificado el fichero /pesediaDemo/public_html/vendor/elgg/elgg/js/lib/ui.js a partir de la línea 187
